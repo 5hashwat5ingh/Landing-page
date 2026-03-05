@@ -487,7 +487,7 @@ export function Hero() {
           <GrainOverlay />
           <section className="scene scene-1 absolute inset-0">
             <img
-              src="/FirstA.png"
+              src="/FirstA.webp"
               alt="Daytime"
               className="w-full h-full object-cover"
             />
