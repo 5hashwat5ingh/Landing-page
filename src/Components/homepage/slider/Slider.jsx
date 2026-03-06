@@ -1,103 +1,220 @@
-import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
-import artistsData from './Artist';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import artistsData from "./Artist";
 
-const getCardsPerView = () => {
-  if (typeof window === 'undefined') return 3;
-  if (window.innerWidth < 640) return 1;
-  if (window.innerWidth < 1024) return 2;
-  return 3;
+// ── Typography-aware variants ─────────────────────────────────────────────────
+// Per web-typography skill: stagger aids scanning hierarchy
+const containerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.13 } },
 };
 
-const ArtistGallery = () => {
-  const [cardsPerView, setCardsPerView] = useState(getCardsPerView);
-  const [startIndex, setStartIndex] = useState(0);
+const itemVariants = {
+  hidden: { opacity: 0, y: 28 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: "easeOut" } },
+};
+// ─────────────────────────────────────────────────────────────────────────────
 
-  useEffect(() => {
-    const handleResize = () => setCardsPerView(getCardsPerView());
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+// Triple for seamless infinite loop (-33.333% = one full copy)
+const LOOP_ARTISTS = [...artistsData, ...artistsData, ...artistsData];
 
-  const maxStartIndex = Math.max(0, artistsData.length - cardsPerView);
-  const visibleArtists = artistsData.slice(startIndex, startIndex + cardsPerView);
+const links = {
+  2025: "https://www.youtube.com/embed/ziAZfHGa270",
+  2024: "https://www.youtube.com/embed/ziAZfHGa270",
+  2023: "https://www.youtube.com/embed/5pzCzYzePjw",
+};
 
-  useEffect(() => {
-    setStartIndex((prev) => Math.min(prev, maxStartIndex));
-  }, [maxStartIndex]);
+// Strong drop-shadow so text stays readable over ANY background colour
+const headingShadow = {
+  textShadow: "0 2px 12px rgba(0,0,0,0.95), 0 0 30px rgba(0,0,0,0.8)",
+};
+const bodyShadow = {
+  textShadow: "0 1px 8px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.7)",
+};
 
-  const showNext = () => {
-    setStartIndex((prev) => (prev >= maxStartIndex ? 0 : prev + 1));
-  };
-
-  const showPrev = () => {
-    setStartIndex((prev) => (prev <= 0 ? maxStartIndex : prev - 1));
-  };
+export default function ArtistsAbout() {
+  const [selectedYear, setSelectedYear] = useState(2023);
 
   return (
-    <div className="w-full max-w-5xl">
-      <div className="rounded-2xl border border-white/10 bg-black/40 backdrop-blur-md p-4 md:p-6">
-        <div className="mb-4 flex items-center justify-between gap-4">
-          <h2 className="text-2xl md:text-3xl font-bold text-[#FF8888] text-left">
-            Featured Artists
-          </h2>
+    <div className="scene-content w-full h-full flex flex-col items-center justify-center px-4 overflow-hidden">
+      <motion.div
+        className="w-full flex flex-col items-center gap-5"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.3 }}
+      >
+        {/* ── ABOUT ABHYUDAYA ─────────────────────────────────────────────── */}
+        {/* Display heading: Cinzel — enchanted Roman serif, strong personality */}
+        <motion.h2
+          variants={itemVariants}
+          style={{
+            fontFamily: "'Cinzel', Georgia, serif",
+            letterSpacing: "0.2em",
+            lineHeight: 1.2,
+            ...headingShadow,
+          }}
+          className="text-[#c084fc] text-xl md:text-3xl font-bold text-center"
+        >
+          ABOUT ABHYUDAYA
+        </motion.h2>
 
-          <div className="flex items-center gap-2">
-            <button
-              type="button"
-              onClick={showPrev}
-              className="h-9 w-9 rounded-full border border-white/20 bg-black/60 text-white transition hover:bg-white hover:text-black"
-              aria-label="Previous artists"
-            >
-              ‹
-            </button>
-            <button
-              type="button"
-              onClick={showNext}
-              className="h-9 w-9 rounded-full border border-white/20 bg-black/60 text-white transition hover:bg-white hover:text-black"
-              aria-label="Next artists"
-            >
-              ›
-            </button>
-          </div>
-        </div>
+        {/* Body text: Inter — neutral workhorse, highly readable at small sizes */}
+        {/* web-typography: 16px min, line-height 1.6, max-width 65ch */}
+        <motion.p
+          variants={itemVariants}
+          style={{
+            fontFamily: "'Inter', system-ui, sans-serif",
+            lineHeight: 1.65,
+            maxWidth: "58ch",
+            ...bodyShadow,
+          }}
+          className="text-white text-sm md:text-base text-center font-medium"
+        >
+          Abhyudaya is the annual Art, Cultural &amp; Literary fest of MMMUT,
+          Gorakhpur — a vibrant confluence of creativity and passion where art
+          breathes, culture thrives, and literature resonates. This year&apos;s theme:{" "}
+          <em style={{ fontFamily: "'TimBurton', serif", color: "#000", fontStyle: "normal", textShadow: "0 1px 6px rgba(255,255,255,0.4)" }}>
+            An Enchanted Escapade
+          </em>
+          .
+        </motion.p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
-          {visibleArtists.map((artist, index) => (
-            <motion.article
-              key={`${artist.name}-${startIndex}-${index}`}
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.35, ease: 'easeOut' }}
-              whileHover={{ y: -4 }}
-              className="group relative overflow-hidden rounded-xl border border-white/10 bg-black/30"
+        {/* Stats: Inter bold with strong readable contrast */}
+        <motion.div
+          variants={itemVariants}
+          className="flex flex-wrap justify-center gap-3"
+        >
+          {[
+            { value: "50+", label: "Institutes" },
+            { value: "4L+",  label: "Prize Pool" },
+            { value: "45+",  label: "Events"     },
+            { value: "45K+", label: "Footfall"   },
+          ].map(({ value, label }) => (
+            <div
+              key={label}
+              className="rounded-lg px-4 py-2 text-center min-w-[72px]"
+              style={{
+                background: "linear-gradient(135deg, rgba(255,195,112,0.85), rgba(255,100,100,0.80))",
+                backdropFilter: "blur(6px)",
+                border: "1px solid rgba(255,220,160,0.3)",
+              }}
             >
-              <div className="aspect-[3/4] w-full overflow-hidden">
-                <img
-                  src={artist.link}
-                  alt={artist.name}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  loading="lazy"
-                />
-              </div>
-
-              <div className="absolute inset-x-0 bottom-0 p-3">
-                <div className="rounded-lg border border-white/10 bg-black/65 px-3 py-2 backdrop-blur-sm">
-                  <h3 className="text-sm md:text-base font-semibold text-white truncate">
-                    {artist.name}
-                  </h3>
-                </div>
-              </div>
-            </motion.article>
+              <p
+                className="text-lg font-bold text-white"
+                style={{ fontFamily: "'Inter', sans-serif", ...headingShadow }}
+              >
+                {value}
+              </p>
+              <p
+                className="text-[11px] font-medium text-white/90 uppercase tracking-widest"
+                style={{ fontFamily: "'Inter', sans-serif" }}
+              >
+                {label}
+              </p>
+            </div>
           ))}
-        </div>
+        </motion.div>
 
-        <p className="mt-4 text-right text-xs md:text-sm text-gray-300">
-          {startIndex + 1}-{Math.min(startIndex + cardsPerView, artistsData.length)} of {artistsData.length}
-        </p>
-      </div>
+        {/* ── Compact aftermovie year picker ──────────────────────────────── */}
+        <motion.div variants={itemVariants} className="flex items-center gap-2 flex-wrap justify-center">
+          <span
+            className="text-[#c084fc] text-[11px] font-bold tracking-[0.2em] mr-1"
+            style={{ fontFamily: "'Inter', sans-serif", ...bodyShadow }}
+          >
+            AFTERMOVIE
+          </span>
+          {Object.keys(links).map((year) => {
+            const isActive = selectedYear === Number(year);
+            return (
+              <button
+                key={year}
+                onClick={() => setSelectedYear(Number(year))}
+                className="text-xs px-3 py-1 rounded transition-all"
+                style={{
+                  fontFamily: "'Inter', sans-serif",
+                  border: isActive ? "1px solid #FFD6A5" : "1px solid rgba(255,255,255,0.3)",
+                  color: isActive ? "#FFD6A5" : "rgba(255,255,255,0.65)",
+                  background: isActive ? "rgba(255,214,165,0.15)" : "transparent",
+                  textShadow: "0 1px 6px rgba(0,0,0,0.8)",
+                }}
+              >
+                {year}
+              </button>
+            );
+          })}
+          <a
+            href={links[selectedYear]}
+            target="_blank"
+            rel="noreferrer"
+            className="text-xs transition hover:opacity-100 opacity-75 ml-1"
+            style={{
+              fontFamily: "'Inter', sans-serif",
+              color: "#a5c8ff",
+              textShadow: "0 1px 6px rgba(0,0,0,0.8)",
+            }}
+          >
+            Watch ↗
+          </a>
+        </motion.div>
+
+        {/* ── FEATURED ARTISTS divider ─────────────────────────────────────── */}
+        {/* Cinzel again to match heading hierarchy */}
+        <motion.div variants={itemVariants} className="w-full text-center">
+          <h3
+            className="text-[#c084fc] text-base md:text-lg font-semibold tracking-[0.18em]"
+            style={{ fontFamily: "'Cinzel', Georgia, serif", ...headingShadow }}
+          >
+            FEATURED ARTISTS
+          </h3>
+          <div className="h-px w-20 mx-auto mt-1.5" style={{ background: "rgba(255,214,165,0.5)" }} />
+        </motion.div>
+
+        {/* ── Infinite horizontal marquee ───────────────────────────────────── */}
+        <motion.div
+          variants={itemVariants}
+          className="w-full overflow-hidden"
+          style={{
+            maskImage:
+              "linear-gradient(to right, transparent, black 6%, black 94%, transparent)",
+          }}
+        >
+          <div className="artist-marquee flex gap-3 w-max">
+            {LOOP_ARTISTS.map((artist, i) => (
+              <div
+                key={i}
+                className="flex-shrink-0 w-24 md:w-28 flex flex-col items-center group"
+              >
+                <div
+                  className="w-full aspect-[3/4] rounded-xl overflow-hidden transition-all duration-300 group-hover:scale-105"
+                  style={{
+                    border: "1px solid rgba(255,214,165,0.25)",
+                    boxShadow: "0 4px 20px rgba(0,0,0,0.5)",
+                  }}
+                >
+                  <img
+                    src={artist.link}
+                    alt={artist.name}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                {/* Artist name: Inter, high-contrast with shadow */}
+                <p
+                  className="mt-1.5 text-[10px] md:text-xs text-center w-full px-1 truncate font-semibold"
+                  style={{
+                    fontFamily: "'Inter', sans-serif",
+                    color: "#fff",
+                    ...bodyShadow,
+                  }}
+                >
+                  {artist.name}
+                </p>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      </motion.div>
     </div>
   );
-};
-
-export default ArtistGallery;
+}

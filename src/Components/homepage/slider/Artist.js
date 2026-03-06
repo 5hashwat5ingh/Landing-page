@@ -1,12 +1,19 @@
 const artistsData = [
   {
-    name: "AKASH DUBAY",
-    link: "https://i.postimg.cc/4420Vqd7/Akash-dubay.jpg"
-
+    name: "DJ Tracer",
+    link: "https://res.cloudinary.com/dzqtx9kms/image/upload/v1772787937/width_550_fubt6j.jpg",
   },
   {
     name: "The KO-रस Band",
-    link: "https://i.postimg.cc/5yDpTcYs/Koras.png",
+    link: "https://res.cloudinary.com/dzqtx9kms/image/upload/v1772787937/width_550_1_qabqw1.jpg",
+  },
+  {
+    name: "Shivam Chauhan",
+    link: "https://res.cloudinary.com/dzqtx9kms/image/upload/v1772787937/width_550_2_ibtksp.jpg",
+  },
+  {
+    name: "AKASH DUBAY",
+    link: "https://i.postimg.cc/4420Vqd7/Akash-dubay.jpg",
   },
   {
     name: "Anubhav Singh Bassi",
