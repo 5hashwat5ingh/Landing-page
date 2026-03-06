@@ -14,6 +14,7 @@ import Gallery from "./Gallery";
 import Marchandise from "../homepage/merchandise/Merchandise";
 import Hero2Section from "../homepage/hero2";
 import Slider from "../homepage/slider/Slider";
+import CombinedFest from "./CombinedFest";
 gsap.registerPlugin(ScrollTrigger);
 
 // ── Framer Motion variants (shared across local components) ─────────────────
@@ -120,7 +121,11 @@ const ContactSection = () => (
 							variants={itemVariants}
 							className="text-md md:text-xl text-center leading-relaxed text-gray-200"
 						>
-							Step into <strong>Enchanted Escapade</strong>, the magical journey of Abhyudaya—where
+							Step into{" "}
+							<span style={{ fontFamily: "'TimBurton', serif", color: "#000", textShadow: "0 1px 6px rgba(255,255,255,0.4)" }}>
+								An Enchanted Escapade
+							</span>
+							, the magical journey of Abhyudaya—where
 							art, imagination, and creativity come alive. Stay tuned for updates,
 							event announcements, and exclusive behind-the-scenes moments from our
 							grand cultural celebration.
@@ -554,8 +559,8 @@ export function Hero() {
           </section>
           <section className="scene scene-5 absolute inset-0 opacity-0">
             <canvas ref={canvasRefs.ForestToworld} />
-            <div className="absolute scene-content inset-0 flex items-center justify-center">
-              <Gallery  />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <CombinedFest />
             </div>
           </section>
           <section className="scene scene-6 absolute inset-0 opacity-0">
@@ -564,10 +569,6 @@ export function Hero() {
               alt="Dark Wizard"
               className="w-full h-full object-cover"
             />
-            <div className="absolute scene-content inset-0 flex items-center justify-center">
-              <Marchandise />
-            </div>
-            
           </section>
           <section className="scene scene-8 absolute inset-0 opacity-0">
             <img
@@ -575,9 +576,6 @@ export function Hero() {
               alt="Nighttime"
               className="w-full h-full object-cover brightness-50"
             />
-            <div className="absolute inset-0 flex items-center justify-center">
-							<ContactSection /> 
-						</div>
           </section>
           
           

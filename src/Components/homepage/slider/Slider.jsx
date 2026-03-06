@@ -74,7 +74,7 @@ export default function ArtistsAbout() {
           Abhyudaya is the annual Art, Cultural &amp; Literary fest of MMMUT,
           Gorakhpur — a vibrant confluence of creativity and passion where art
           breathes, culture thrives, and literature resonates. This year&apos;s theme:{" "}
-          <em style={{ fontFamily: "'Cinzel', serif", color: "#FFD6A5" }}>
+          <em style={{ fontFamily: "'TimBurton', serif", color: "#000", fontStyle: "normal", textShadow: "0 1px 6px rgba(255,255,255,0.4)" }}>
             An Enchanted Escapade
           </em>
           .
