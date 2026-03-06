@@ -36,13 +36,13 @@ const itemVariants = {
 
 const Logo = () => (
   <div
-    className="scene-content flex items-center justify-center w-full max-w-4xl mx-auto"
+    className="scene-content flex items-center justify-center w-full h-full"
     style={{ willChange: "transform, opacity" }}
   >
     <img
       src="/Abhyudaya-combined.png"
-      alt="Abhyudaya  Logo"
-      className="w-full h-auto drop-shadow-[0_0_30px_rgba(135,206,235,0.6)]"
+      alt="Abhyudaya Logo"
+      className="w-3/5 md:w-2/5 h-auto drop-shadow-[0_0_30px_rgba(135,206,235,0.6)]"
     />
   </div>
 );
@@ -103,7 +103,7 @@ const ContactSection = () => (
 			>
 				<motion.h2
 					variants={itemVariants}
-					className="text-2xl md:text-6xl font-bold text-[#FF8888] text-center drop-shadow-lg mb-2"
+					className="text-2xl md:text-6xl font-bold text-[#c084fc] text-center drop-shadow-lg mb-2"
 				>
 					Join the Community
 				</motion.h2>

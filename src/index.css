@@ -38,11 +38,24 @@ a:hover {
 html {
   background-color: #000;
   color: #f3f4f6;
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+body {
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+/* Webkit scrollbar hide */
+::-webkit-scrollbar-corner {
+  background: transparent;
 }
 
 /* Custom scrollbar for dark theme */
 ::-webkit-scrollbar {
-  width: 10px;
+  display: none;
+  /* Chrome / Safari / Edge */
 }
 
 ::-webkit-scrollbar-track {

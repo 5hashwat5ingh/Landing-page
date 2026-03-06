@@ -54,7 +54,7 @@ export default function ArtistsAbout() {
             lineHeight: 1.2,
             ...headingShadow,
           }}
-          className="text-[#FFD6A5] text-xl md:text-3xl font-bold text-center"
+          className="text-[#c084fc] text-xl md:text-3xl font-bold text-center"
         >
           ABOUT ABHYUDAYA
         </motion.h2>
@@ -119,7 +119,7 @@ export default function ArtistsAbout() {
         {/* ── Compact aftermovie year picker ──────────────────────────────── */}
         <motion.div variants={itemVariants} className="flex items-center gap-2 flex-wrap justify-center">
           <span
-            className="text-[#FFD6A5] text-[11px] font-bold tracking-[0.2em] mr-1"
+            className="text-[#c084fc] text-[11px] font-bold tracking-[0.2em] mr-1"
             style={{ fontFamily: "'Inter', sans-serif", ...bodyShadow }}
           >
             AFTERMOVIE
@@ -162,7 +162,7 @@ export default function ArtistsAbout() {
         {/* Cinzel again to match heading hierarchy */}
         <motion.div variants={itemVariants} className="w-full text-center">
           <h3
-            className="text-[#FFD6A5] text-base md:text-lg font-semibold tracking-[0.18em]"
+            className="text-[#c084fc] text-base md:text-lg font-semibold tracking-[0.18em]"
             style={{ fontFamily: "'Cinzel', Georgia, serif", ...headingShadow }}
           >
             FEATURED ARTISTS

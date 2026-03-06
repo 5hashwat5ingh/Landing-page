@@ -45,7 +45,7 @@ export default function CombinedFest() {
         <motion.h2
           variants={item}
           style={{ fontFamily: CINZEL, letterSpacing: "0.18em", ...hs }}
-          className="text-[#FFD6A5] text-lg md:text-2xl font-bold text-center mb-4"
+          className="text-[#c084fc] text-lg md:text-2xl font-bold text-center mb-4"
         >
           GALLERY
         </motion.h2>
@@ -82,7 +82,7 @@ export default function CombinedFest() {
         <motion.h2
           variants={item}
           style={{ fontFamily: CINZEL, letterSpacing: "0.18em", ...hs }}
-          className="text-[#FFD6A5] text-lg md:text-2xl font-bold text-center mb-1"
+          className="text-[#c084fc] text-lg md:text-2xl font-bold text-center mb-1"
         >
           MERCHANDISE
         </motion.h2>
@@ -104,12 +104,12 @@ export default function CombinedFest() {
               className="cursor-pointer rounded-2xl overflow-hidden transition-all duration-300"
               style={{
                 border: selectedTee === color
-                  ? "1.5px solid rgba(255,214,165,0.7)"
+                  ? "1.5px solid rgba(192,132,252,0.7)"
                   : "1px solid rgba(255,255,255,0.1)",
                 background: "rgba(0,0,0,0.35)",
                 backdropFilter: "blur(8px)",
                 boxShadow: selectedTee === color
-                  ? "0 0 20px rgba(255,214,165,0.25)"
+                  ? "0 0 20px rgba(192,132,252,0.25)"
                   : "0 4px 20px rgba(0,0,0,0.5)",
               }}
             >
@@ -137,9 +137,9 @@ export default function CombinedFest() {
             className="text-sm font-semibold px-8 py-2 rounded-full transition-all duration-300 hover:scale-105"
             style={{
               fontFamily: INTER,
-              background: "rgba(255,214,165,0.15)",
-              border: "1px solid rgba(255,214,165,0.5)",
-              color: "#FFD6A5",
+              background: "rgba(192,132,252,0.12)",
+              border: "1px solid rgba(192,132,252,0.5)",
+              color: "#c084fc",
               backdropFilter: "blur(6px)",
               ...bs,
             }}
@@ -160,7 +160,7 @@ export default function CombinedFest() {
         <motion.h2
           variants={item}
           style={{ fontFamily: CINZEL, letterSpacing: "0.16em", ...hs }}
-          className="text-[#FFD6A5] text-lg md:text-2xl font-bold text-center mb-2"
+          className="text-[#c084fc] text-lg md:text-2xl font-bold text-center mb-2"
         >
           JOIN THE COMMUNITY
         </motion.h2>
