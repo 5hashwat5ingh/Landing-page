@@ -271,7 +271,7 @@ export function Hero() {
 
   useEffect(() => {
     if ((isMobile && mainRef.current) || (!isMobile && imagesLoaded)) {
-      const lenis = new Lenis({ lerp: 0.1 });
+      const lenis = new Lenis({ lerp: 0.08, smoothWheel: true });
       lenis.on("scroll", ScrollTrigger.update);
       const update = (time) => {
         lenis.raf(time * 1000);
@@ -390,12 +390,22 @@ export function Hero() {
 
                   if (isActive) {
                     if (index === scenes.length - 1) {
-                      const p = localProgress / fadeInEnd;
-                      gsap.set(content, {
-                        autoAlpha: p,
-                        y: from.y ? from.y * (1 - p) : 0,
-                        x: from.x ? from.x * (1 - p) : 0,
-                      });
+                      // Last scene: fade in → hold → fade out (background stays)
+                      const FADE_IN_END  = 0.4;
+                      const FADE_OUT_START = 0.65;
+                      if (localProgress < FADE_IN_END) {
+                        const p = localProgress / FADE_IN_END;
+                        gsap.set(content, {
+                          autoAlpha: p,
+                          y: from.y ? from.y * (1 - p) : 0,
+                          x: from.x ? from.x * (1 - p) : 0,
+                        });
+                      } else if (localProgress > FADE_OUT_START) {
+                        const p = (localProgress - FADE_OUT_START) / (1 - FADE_OUT_START);
+                        gsap.set(content, { autoAlpha: 1 - p, y: -40 * p, x: 0 });
+                      } else {
+                        gsap.set(content, { autoAlpha: 1, y: 0, x: 0 });
+                      }
                     } else if (localProgress < fadeInEnd) {
                       const p = localProgress / fadeInEnd;
                       gsap.set(content, {
@@ -435,20 +445,18 @@ export function Hero() {
                   const frameIndex = Math.floor(
                     easedProgress * (sceneConfigs[configKey].frameCount - 1)
                   );
-                  requestAnimationFrame(() => {
-                    if (imageSequences.current[configKey]?.[frameIndex])
-                      renderFrame(
-                        contexts[configKey],
-                        imageSequences.current[configKey][frameIndex]
-                      );
-                  });
+                  if (imageSequences.current[configKey]?.[frameIndex]) {
+                    renderFrame(
+                      contexts[configKey],
+                      imageSequences.current[configKey][frameIndex]
+                    );
+                  }
                 }
               };
 
               updateSequence(2, "treetogate");
               updateSequence(3, "gatetoforest");
-              updateSequence(5, "ForestToworld");
-              updateSequence(7, "Last");
+              updateSequence(4, "ForestToworld");
             },
           });
 
@@ -550,35 +558,13 @@ export function Hero() {
             </div>
           </section>
 
-          <section className="scene scene-4 absolute inset-0 opacity-0">
-            <img
-              src="/first_location.webp"
-              alt="Forest"
-              className="w-full h-full object-cover"
-            />
-          </section>
           <section className="scene scene-5 absolute inset-0 opacity-0">
             <canvas ref={canvasRefs.ForestToworld} />
             <div className="absolute inset-0 flex items-center justify-center">
               <CombinedFest />
             </div>
           </section>
-          <section className="scene scene-6 absolute inset-0 opacity-0">
-            <img
-              src="/second_location.webp"
-              alt="Dark Wizard"
-              className="w-full h-full object-cover"
-            />
-          </section>
-          <section className="scene scene-8 absolute inset-0 opacity-0">
-            <img
-              src="/last.webp"
-              alt="Nighttime"
-              className="w-full h-full object-cover brightness-50"
-            />
-          </section>
-          
-          
+
         </div>
       </div>
     </div>
