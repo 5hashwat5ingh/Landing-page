@@ -15,7 +15,49 @@ import Gallery from "./Gallery";
 import Marchandise from "../homepage/merchandise/Merchandise";
 import Hero2Section from "../homepage/hero2";
 import Slider from "../homepage/slider/Slider";
+import firstSceneLinksRaw from "./1st.json?raw";
+import secondSceneLinksRaw from "./2nd.json?raw";
+import thirdSceneLinksRaw from "./3rd.json?raw";
+import fourthSceneLinksRaw from "./4th.json?raw";
 gsap.registerPlugin(ScrollTrigger);
+
+const buildFrameMap = (rawLinks, maxFrame) => {
+  const map = new Map();
+  const idSrcRegex = /"id"\s*:\s*(\d+)\s*,\s*"src"\s*:\s*"([^"]+)"/g;
+  const srcIdRegex = /"src"\s*:\s*"([^"]+)"\s*,\s*"id"\s*:\s*(\d+)/g;
+  const altSrcRegex = /"alt"\s*:\s*"frame(\d+)"\s*,\s*"src"\s*:\s*"([^"]+)"/gi;
+  const srcAltRegex = /"src"\s*:\s*"([^"]+)"\s*,\s*"alt"\s*:\s*"frame(\d+)"/gi;
+
+  const addIfValid = (id, src) => {
+    if (id >= 1 && id <= maxFrame && src && !map.has(id)) {
+      map.set(id, src);
+    }
+  };
+
+  let match;
+  while ((match = idSrcRegex.exec(rawLinks)) !== null) {
+    addIfValid(Number(match[1]), match[2]);
+  }
+
+  while ((match = srcIdRegex.exec(rawLinks)) !== null) {
+    addIfValid(Number(match[2]), match[1]);
+  }
+
+  while ((match = altSrcRegex.exec(rawLinks)) !== null) {
+    addIfValid(Number(match[1]), match[2]);
+  }
+
+  while ((match = srcAltRegex.exec(rawLinks)) !== null) {
+    addIfValid(Number(match[2]), match[1]);
+  }
+
+  return map;
+};
+
+const firstSceneFrameMap = buildFrameMap(firstSceneLinksRaw, 192);
+const secondSceneFrameMap = buildFrameMap(secondSceneLinksRaw, 192);
+const thirdSceneFrameMap = buildFrameMap(thirdSceneLinksRaw, 96);
+const fourthSceneFrameMap = buildFrameMap(fourthSceneLinksRaw, 84);
 
 
 const Logo = () => (
@@ -146,19 +188,19 @@ const WizardInfo = ({ name, description, type }) => (
 const sceneConfigs = {
   treetogate: {
     frameCount: 192,
-    path: (frame) => `/Frame/1st/frame${frame}.webp`,
+    path: (frame) => firstSceneFrameMap.get(frame) ?? firstSceneFrameMap.get(1) ?? "",
   },
   gatetoforest: {
     frameCount: 192,
-    path: (frame) => `/Frame/2nd/frame${frame}.webp`,
+    path: (frame) => secondSceneFrameMap.get(frame) ?? secondSceneFrameMap.get(1) ?? "",
   },
   ForestToworld: {
     frameCount: 96,
-    path: (frame) => `/Frame/3rd/frame${frame}.webp`,
+    path: (frame) => thirdSceneFrameMap.get(frame) ?? thirdSceneFrameMap.get(1) ?? "",
   },
   Last: {
     frameCount: 84,
-    path: (frame) => `/Frame/4th/frame${frame}.webp`,
+    path: (frame) => fourthSceneFrameMap.get(frame) ?? fourthSceneFrameMap.get(1) ?? "",
   },
 };
 
@@ -487,7 +529,7 @@ export function Hero() {
           <GrainOverlay />
           <section className="scene scene-1 absolute inset-0">
             <img
-              src="/FirstA.webp"
+              src="/FirstA.png"
               alt="Daytime"
               className="w-full h-full object-cover"
             />
@@ -505,7 +547,7 @@ export function Hero() {
           <section className="scene scene-3 absolute inset-0 opacity-0">
             <canvas ref={canvasRefs.gatetoforest} />
             
-            <div className="absolute inset-0 flex items-center justify-start px-8 md:px-16 lg:px-32">
+            <div className="absolute inset-0 flex items-center justify-start ">
 							<Slider
 							/>
 						</div>
@@ -537,7 +579,7 @@ export function Hero() {
             </div>
             
           </section>
-          <section className="scene scene-8 absolute inset-0 opacity-0">
+          {/*<section className="scene scene-8 absolute inset-0 opacity-0">
             <img
               src="/last.webp"
               alt="Nighttime"
@@ -547,7 +589,7 @@ export function Hero() {
 							<ContactSection /> 
 						</div>
           </section>
-          
+          */}
           
         </div>
       </div>

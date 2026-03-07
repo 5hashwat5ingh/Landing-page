@@ -39,7 +39,7 @@ const ArtistGallery = () => {
       <div className="rounded-2xl border border-white/10 bg-black/40 backdrop-blur-md p-4 md:p-6">
         <div className="mb-4 flex items-center justify-between gap-4">
           <h2 className="text-2xl md:text-3xl font-bold text-[#FF8888] text-left">
-            Featured Artists
+            Previous Artists
           </h2>
 
           <div className="flex items-center gap-2">
