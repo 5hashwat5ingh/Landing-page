@@ -82,108 +82,10 @@ const GrainOverlay = () => (
         }}
     />
   );
-/*
-  const ThemeInfo = () => (
-	<div className="scene-content mx-5 my-4 p-8 max-w-3xl bg-black/50 backdrop-blur-lg border border-yellow-400/30 rounded-xl shadow-2xl ">
-		<h2 className="text-2xl md:text-6xl text-center font-bold text-[#FF8888] mb-4">
-			Abhyudaya: Enchanted Escapade
-		</h2>
 
-		<p className=" text-center text-gray-200">
-			Where the veil between reality and wonder grows thin, Abhyudaya unfolds—
-			a gateway to realms forgotten and dreams awakened.
-			<br />
-			<br />
-			Within this enchanted world, ancient spirits, wandering stars, and 
-			whispers of forgotten magic intertwine. Here, every moment is a
-			journey—every heartbeat, an adventure waiting to be discovered.
-			<br />
-			<br />
-			Performers become storytellers of the arcane; dancers trace spells
-			in the air; musicians summon worlds with their melodies. Art no longer
-			remains an expression—it becomes a portal.
-			<br />
-			<br />
-			As dusk descends, the realm deepens. Mystical paths open, guiding all who
-			enter into an escapade of wonder, courage, and creation. Legends are not
-			read—they are lived.
-			<br />
-			<br />
-			This year, Abhyudaya does not merely arrive—it *enchants*. And the
-			Escapade begins for those brave enough to step beyond the ordinary.
-		</p>
-	</div>
-);
-*/
-const ContactSection = () => (
-	<div className="scene-content w-full overflow-hidden flex flex-col items-center justify-start py-12 md:py-20">
-		<div className="absolute mt-[5%] w-full" />
 
-		<div className="w-11/12 max-w-5xl mx-auto backdrop-blur-md bg-black/30 p-6 md:p-10 rounded-2xl shadow-deep border border-white/5  transition-all duration-300 hover:shadow-deep-lg mt-[4%]">
-			<h2 className="text-2xl md:text-6xl font-bold text-[#FF8888] text-center drop-shadow-lg mb-2">
-				Join the Community
-			</h2>
 
-			<div className="flex flex-col md:flex-row gap-4 md:gap-12 items-center">
-				<div className="flex-1 text-white">
-					<h2 className="text-l text-center md:text-2xl font-bold mb-2 ">
-						Welcome to Abhyudaya – MMMUT's Cultural Fest!
-					</h2>
 
-					<p className="text-md md:text-xl text-center leading-relaxed text-gray-200">
-						Step into <strong>Enchanted Escapade</strong>, the magical journey of Abhyudaya—where
-						art, imagination, and creativity come alive. Stay tuned for updates,
-						event announcements, and exclusive behind-the-scenes moments from our
-						grand cultural celebration.
-						<br />
-						<br />
-						Join the adventure, embrace the magic, and be part of the vibrant
-						energy that defines campus life.
-						<strong className="block mt-2">
-							Your escapade begins here!
-						</strong>
-					</p>
-
-					<div className="mt-[10%] flex justify-center md:justify-center">
-						<a href="https://whatsapp.com/channel/0029VaGSSJQGJP8AijZRD62j">
-							<button className="flex items-center gap-2 border border-pink-400 text-pink-400 font-bold px-6 py-2 rounded-2xl hover:bg-pink-400 hover:text-black transition-all duration-300 cursor-pointer">
-								<FaWhatsapp className="text-xl" />
-								Join WhatsApp Channel
-							</button>
-						</a>
-					</div>
-				</div>
-
-				<div className="flex-1 w-full md:w-full relative p-6  backdrop-blur-xl rounded-2xl "  >
-          <div className="aspect-video w-full rounded-xl overflow-hidden">
-            <img
-              src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=600&fit=crop"
-              alt="A magical moment from Abhyudaya's cultural performances"
-              className="w-full h-full object-cover transition-[transform,filter] duration-500 hover:scale-[1.03] hover:brightness-110 hover:contrast-110"
-            />
-          </div>
-				</div>
-			</div>
-		</div>
-	</div>
-);
-
-const WizardInfo = ({ name, description, type }) => (
-	<div
-		className={`scene-content mx-2 mt-16 p-4 max-w-3xl bg-black/50 backdrop-blur-[2px] border shadow-2xl rounded-xl ${
-      type === "light" ? "border-yellow-400/30" : "border-purple-400/30"
-    } `}
-	>
-		<h2
-			className={`text-2xl md:text-6xl text-center font-bold  ${
-				type === "light" ? "text-[#FF8888]" : "text-purple-400"
-			} mb-4`}
-		>
-			{name}
-		</h2>
-		<p className=" text-center text-gray-200">{description}</p>
-	</div>
-);
 
 const sceneConfigs = {
   treetogate: {

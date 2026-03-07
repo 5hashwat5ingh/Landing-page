@@ -1,66 +1,90 @@
-import React, { useState } from "react";
-import { Menu, X } from "lucide-react";
-import Abhyudaya from "../../assets/Logo-images/Abhyudaya-combined.png"
+import React from "react";
+import { CalendarDays, MapPin, Sparkles } from "lucide-react";
+import Abhyudaya from "../../assets/Logo-images/Abhyudaya-combined.png";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-
 export default function Hero2Section() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const  user  = useSelector((state) => state.user);
+  const user = useSelector((state) => state.user);
 
   return (
-    <div className="relative overflow-hidden  scene-content mx-5 my-4 p-8 max-w-5xl bg-black/50 backdrop-blur-lg border border-yellow-400/30 rounded-xl shadow-2xl">
-      {/* Background Image with Blur 
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-transparent" />
-        <div className="absolute inset-0 bg-black opacity-40" />
-      </div>*/}
+    <section className="scene-content relative mx-4 my-6 max-w-6xl overflow-hidden rounded-3xl border border-amber-300/30 bg-slate-950/75 p-6 shadow-2xl backdrop-blur-xl md:mx-8 md:p-10">
+      {/* Atmospheric background layers */}
+      <div className="pointer-events-none absolute -left-16 -top-16 h-56 w-56 rounded-full bg-amber-300/20 blur-3xl" />
+      <div className="pointer-events-none absolute -right-20 bottom-10 h-64 w-64 rounded-full bg-fuchsia-400/20 blur-3xl" />
+      <div className="pointer-events-none absolute inset-0 bg-linear-to-br from-amber-200/10 via-transparent to-sky-200/10" />
 
-      {/* Content Section */}
-      <div className="relative z-10 ">
-        <div className="mx-auto max-w-6xl px-6 text-center">
-          <div className="flex justify-center">
-           
-          </div>
-          
-             {/* Festival Title */}
-             <img src={Abhyudaya} alt="" srcset=""   className="w-3/5 m-auto  h-auto animate-ease-out" />
-        <div className="text-center mb-4">
-          <h1 className="text-4xl md:text-7xl font-extrabold mb-2 tracking-tight">
-            <p className="bg-clip-text text-transparent bg-gradient-to-r from-pink-400 to-purple-300 animate-pulse">
-            AN ENIGMATIC ENSEMBLE
-            </p>
-          </h1>
-       
-         </div>
-           
-         
-         <p className="mt-6 text-lg tracking-tight leading-8 text-indigo-200 max-w-4xl mx-auto">
-          Step into a vibrant celebration where India's timeless heritage meets modern style. <strong>Abhyudaya</strong>, <span className="uppercase">{ "An Enigmatic Ensemble"}</span> is a kaleidoscopic fusion of tradition and innovation, where ancient rhythms, contemporary beats, and vibrant colors come alive. Join us on this mesmerizing journey of discovery and creativity!
-          </p>
+      <div className="relative z-10 mx-auto max-w-5xl text-center">
         
-          { !user &&
 
-<Link to="/profile">
-<div className="mt-4 flex items-center justify-center gap-x-6 md:hidden flex">
-  
-  <span className="rounded-full bg-gradient-to-r from-purple-300 to-indigo-300 px-6 py-3 text-md text-gray-900 font-semibold shadow-sm hover:from-purple-600 hover:to-indigo-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 hover:text-gray-100 focus-visible:outline-indigo-400 transition-all duration-300 cursor-pointer">
-    Register Now
-  </span>
-  
-</div>
-</Link>
-          }
-          <div className="mt-16">
-            <div className="relative">
-              <div className="relative flex justify-center">
-              
-              </div>
-            </div>
+        {/* Festival identity */}
+        <img
+          src={Abhyudaya}
+          alt="Abhyudaya logo"
+          className="mx-auto mb-6 h-auto w-4/5 max-w-xl animate-ease-out drop-shadow-2xl md:w-3/5"
+        />
+
+        <h2 className="mb-4 bg-linear-to-r from-rose-200 via-amber-100 to-sky-200 bg-clip-text text-4xl font-extrabold tracking-tight text-transparent sm:text-5xl md:text-7xl">
+          Abhyudaya: Enchanted Escapade
+        </h2>
+
+        <p className="mx-auto mt-6 max-w-4xl text-base leading-7 text-slate-100/90 sm:text-lg sm:leading-8">
+          Where the veil between reality and wonder grows thin, Abhyudaya unfolds
+          as a gateway to realms forgotten and dreams awakened.
+          <br />
+          <br />
+          Within this enchanted world, ancient spirits, wandering stars, and
+          whispers of forgotten magic intertwine. Here, every moment is a
+          journey and every heartbeat an adventure waiting to be discovered.
+          <br />
+          <br />
+          Performers become storytellers of the arcane; dancers trace spells in
+          the air; musicians summon worlds with their melodies. Art no longer
+          remains an expression, it becomes a portal.
+          <br />
+          <br />
+          As dusk descends, the realm deepens. Mystical paths open, guiding all
+          who enter into an escapade of wonder, courage, and creation. Legends
+          are not read, they are lived.
+          <br />
+          <br />
+          This year, Abhyudaya does not merely arrive, it <em>enchants</em>. The
+          escapade begins for those brave enough to step beyond the ordinary.
+        </p>
+
+        <div className="mx-auto mt-8 grid max-w-2xl grid-cols-1 gap-3 text-left sm:grid-cols-2">
+          <div className="rounded-xl border border-white/15 bg-white/5 p-4 backdrop-blur-sm">
+            <p className="mb-2 inline-flex items-center gap-2 text-sm font-semibold text-amber-100">
+              <CalendarDays className="h-4 w-4" />
+              Dates
+            </p>
+            <p className="text-sm text-slate-100/90 sm:text-base">
+              4 April - 6 April, 2025
+            </p>
+          </div>
+
+          <div className="rounded-xl border border-white/15 bg-white/5 p-4 backdrop-blur-sm">
+            <p className="mb-2 inline-flex items-center gap-2 text-sm font-semibold text-amber-100">
+              <MapPin className="h-4 w-4" />
+              Venue
+            </p>
+            <p className="text-sm text-slate-100/90 sm:text-base">
+              MMMUT, Gorakhpur
+            </p>
           </div>
         </div>
+
+        {!user && (
+          <div className="mt-8 flex items-center justify-center">
+            <Link
+              to="/profile"
+              className="rounded-full bg-linear-to-r from-amber-200 to-rose-200 px-7 py-3 text-sm font-semibold text-gray-900 shadow-lg transition-all duration-300 hover:scale-105 hover:from-rose-300 hover:to-amber-300 sm:text-base"
+            >
+              Register Now
+            </Link>
+          </div>
+        )}
       </div>
-    </div>
+    </section>
   );
 }
