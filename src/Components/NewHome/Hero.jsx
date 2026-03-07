@@ -6,43 +6,27 @@ import Lenis from "lenis";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useWindowSize } from "react-use";
-import { motion } from "framer-motion";
 
 import { useStore } from "../../store";
 import { FaWhatsapp } from "react-icons/fa";
+import Aftermovies from "./Aftermovies";
+
 import Gallery from "./Gallery";
 import Marchandise from "../homepage/merchandise/Merchandise";
 import Hero2Section from "../homepage/hero2";
 import Slider from "../homepage/slider/Slider";
-import CombinedFest from "./CombinedFest";
 gsap.registerPlugin(ScrollTrigger);
-
-// ── Framer Motion variants (shared across local components) ─────────────────
-const containerVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.15 } },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
-  },
-};
-// ────────────────────────────────────────────────────────────────────────────
 
 
 const Logo = () => (
   <div
-    className="scene-content flex items-center justify-center w-full h-full"
+    className="scene-content flex items-center justify-center w-full max-w-4xl mx-auto"
     style={{ willChange: "transform, opacity" }}
   >
     <img
       src="/Abhyudaya-combined.png"
-      alt="Abhyudaya Logo"
-      className="w-3/5 md:w-2/5 h-auto drop-shadow-[0_0_30px_rgba(135,206,235,0.6)]"
+      alt="Abhyudaya  Logo"
+      className="w-full h-auto drop-shadow-[0_0_30px_rgba(135,206,235,0.6)]"
     />
   </div>
 );
@@ -93,76 +77,51 @@ const ContactSection = () => (
 	<div className="scene-content w-full overflow-hidden flex flex-col items-center justify-start py-12 md:py-20">
 		<div className="absolute mt-[5%] w-full" />
 
-		<div className="w-11/12 max-w-5xl mx-auto backdrop-blur-md bg-black/30 p-6 md:p-10 rounded-2xl shadow-deep border border-white/5 transition-all duration-300 hover:shadow-deep-lg mt-[4%]">
-			{/* Inner motion container - GSAP animates the outer scene-content */}
-			<motion.div
-				variants={containerVariants}
-				initial="hidden"
-				whileInView="visible"
-				viewport={{ once: false, amount: 0.3 }}
-			>
-				<motion.h2
-					variants={itemVariants}
-					className="text-2xl md:text-6xl font-bold text-[#c084fc] text-center drop-shadow-lg mb-2"
-				>
-					Join the Community
-				</motion.h2>
+		<div className="w-11/12 max-w-5xl mx-auto backdrop-blur-md bg-black/30 p-6 md:p-10 rounded-2xl shadow-deep border border-white/5  transition-all duration-300 hover:shadow-deep-lg mt-[4%]">
+			<h2 className="text-2xl md:text-6xl font-bold text-[#FF8888] text-center drop-shadow-lg mb-2">
+				Join the Community
+			</h2>
 
-				<div className="flex flex-col md:flex-row gap-4 md:gap-12 items-center">
-					<div className="flex-1 text-white">
-						<motion.h2
-							variants={itemVariants}
-							className="text-l text-center md:text-2xl font-bold mb-2"
-						>
-							Welcome to Abhyudaya – MMMUT's Cultural Fest!
-						</motion.h2>
+			<div className="flex flex-col md:flex-row gap-4 md:gap-12 items-center">
+				<div className="flex-1 text-white">
+					<h2 className="text-l text-center md:text-2xl font-bold mb-2 ">
+						Welcome to Abhyudaya – MMMUT's Cultural Fest!
+					</h2>
 
-						<motion.p
-							variants={itemVariants}
-							className="text-md md:text-xl text-center leading-relaxed text-gray-200"
-						>
-							Step into{" "}
-							<span style={{ fontFamily: "'TimBurton', serif", color: "#000", textShadow: "0 1px 6px rgba(255,255,255,0.4)" }}>
-								An Enchanted Escapade
-							</span>
-							, the magical journey of Abhyudaya—where
-							art, imagination, and creativity come alive. Stay tuned for updates,
-							event announcements, and exclusive behind-the-scenes moments from our
-							grand cultural celebration.
-							<br />
-							<br />
-							Join the adventure, embrace the magic, and be part of the vibrant
-							energy that defines campus life.
-							<strong className="block mt-2">Your escapade begins here!</strong>
-						</motion.p>
+					<p className="text-md md:text-xl text-center leading-relaxed text-gray-200">
+						Step into <strong>Enchanted Escapade</strong>, the magical journey of Abhyudaya—where
+						art, imagination, and creativity come alive. Stay tuned for updates,
+						event announcements, and exclusive behind-the-scenes moments from our
+						grand cultural celebration.
+						<br />
+						<br />
+						Join the adventure, embrace the magic, and be part of the vibrant
+						energy that defines campus life.
+						<strong className="block mt-2">
+							Your escapade begins here!
+						</strong>
+					</p>
 
-						<motion.div
-							variants={itemVariants}
-							className="mt-[10%] flex justify-center md:justify-center"
-						>
-							<a href="https://whatsapp.com/channel/0029VaGSSJQGJP8AijZRD62j">
-								<button className="flex items-center gap-2 border border-pink-400 text-pink-400 font-bold px-6 py-2 rounded-2xl hover:bg-pink-400 hover:text-black transition-all duration-300 cursor-pointer">
-									<FaWhatsapp className="text-xl" />
-									Join WhatsApp Channel
-								</button>
-							</a>
-						</motion.div>
+					<div className="mt-[10%] flex justify-center md:justify-center">
+						<a href="https://whatsapp.com/channel/0029VaGSSJQGJP8AijZRD62j">
+							<button className="flex items-center gap-2 border border-pink-400 text-pink-400 font-bold px-6 py-2 rounded-2xl hover:bg-pink-400 hover:text-black transition-all duration-300 cursor-pointer">
+								<FaWhatsapp className="text-xl" />
+								Join WhatsApp Channel
+							</button>
+						</a>
 					</div>
-
-					<motion.div
-						variants={itemVariants}
-						className="flex-1 w-full md:w-full relative p-6 backdrop-blur-xl rounded-2xl"
-					>
-						<div className="aspect-video w-full rounded-xl overflow-hidden">
-							<img
-								src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=600&fit=crop"
-								alt="A magical moment from Abhyudaya's cultural performances"
-								className="w-full h-full object-cover transition-[transform,filter] duration-500 hover:scale-[1.03] hover:brightness-110 hover:contrast-110"
-							/>
-						</div>
-					</motion.div>
 				</div>
-			</motion.div>
+
+				<div className="flex-1 w-full md:w-full relative p-6  backdrop-blur-xl rounded-2xl "  >
+          <div className="aspect-video w-full rounded-xl overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=600&fit=crop"
+              alt="A magical moment from Abhyudaya's cultural performances"
+              className="w-full h-full object-cover transition-[transform,filter] duration-500 hover:scale-[1.03] hover:brightness-110 hover:contrast-110"
+            />
+          </div>
+				</div>
+			</div>
 		</div>
 	</div>
 );
@@ -271,7 +230,7 @@ export function Hero() {
 
   useEffect(() => {
     if ((isMobile && mainRef.current) || (!isMobile && imagesLoaded)) {
-      const lenis = new Lenis({ lerp: 0.08, smoothWheel: true });
+      const lenis = new Lenis({ lerp: 0.1 });
       lenis.on("scroll", ScrollTrigger.update);
       const update = (time) => {
         lenis.raf(time * 1000);
@@ -390,22 +349,12 @@ export function Hero() {
 
                   if (isActive) {
                     if (index === scenes.length - 1) {
-                      // Last scene: fade in → hold → fade out (background stays)
-                      const FADE_IN_END  = 0.4;
-                      const FADE_OUT_START = 0.65;
-                      if (localProgress < FADE_IN_END) {
-                        const p = localProgress / FADE_IN_END;
-                        gsap.set(content, {
-                          autoAlpha: p,
-                          y: from.y ? from.y * (1 - p) : 0,
-                          x: from.x ? from.x * (1 - p) : 0,
-                        });
-                      } else if (localProgress > FADE_OUT_START) {
-                        const p = (localProgress - FADE_OUT_START) / (1 - FADE_OUT_START);
-                        gsap.set(content, { autoAlpha: 1 - p, y: -40 * p, x: 0 });
-                      } else {
-                        gsap.set(content, { autoAlpha: 1, y: 0, x: 0 });
-                      }
+                      const p = localProgress / fadeInEnd;
+                      gsap.set(content, {
+                        autoAlpha: p,
+                        y: from.y ? from.y * (1 - p) : 0,
+                        x: from.x ? from.x * (1 - p) : 0,
+                      });
                     } else if (localProgress < fadeInEnd) {
                       const p = localProgress / fadeInEnd;
                       gsap.set(content, {
@@ -445,18 +394,20 @@ export function Hero() {
                   const frameIndex = Math.floor(
                     easedProgress * (sceneConfigs[configKey].frameCount - 1)
                   );
-                  if (imageSequences.current[configKey]?.[frameIndex]) {
-                    renderFrame(
-                      contexts[configKey],
-                      imageSequences.current[configKey][frameIndex]
-                    );
-                  }
+                  requestAnimationFrame(() => {
+                    if (imageSequences.current[configKey]?.[frameIndex])
+                      renderFrame(
+                        contexts[configKey],
+                        imageSequences.current[configKey][frameIndex]
+                      );
+                  });
                 }
               };
 
               updateSequence(2, "treetogate");
               updateSequence(3, "gatetoforest");
-              updateSequence(4, "ForestToworld");
+              updateSequence(5, "ForestToworld");
+              updateSequence(7, "Last");
             },
           });
 
@@ -553,18 +504,51 @@ export function Hero() {
           </section>
           <section className="scene scene-3 absolute inset-0 opacity-0">
             <canvas ref={canvasRefs.gatetoforest} />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <Slider />
-            </div>
+            
+            <div className="absolute inset-0 flex items-center justify-start px-8 md:px-16 lg:px-32">
+							<Slider
+							/>
+						</div>
           </section>
 
+          <section className="scene scene-4 absolute inset-0 opacity-0">
+            <img
+              src="/first_location.webp"
+              alt="Light Wizard"
+              className="w-full h-full object-cover"
+            /><div className="scene-content absolute inset-0 flex items-center justify-center">
+							<Aftermovies />
+						</div>
+          </section>
           <section className="scene scene-5 absolute inset-0 opacity-0">
             <canvas ref={canvasRefs.ForestToworld} />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <CombinedFest />
+            <div className="absolute scene-content inset-0 flex items-center justify-center">
+              <Gallery  />
             </div>
           </section>
-
+          <section className="scene scene-6 absolute inset-0 opacity-0">
+            <img
+              src="/second_location.webp"
+              alt="Dark Wizard"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute scene-content inset-0 flex items-center justify-center">
+              <Marchandise />
+            </div>
+            
+          </section>
+          <section className="scene scene-8 absolute inset-0 opacity-0">
+            <img
+              src="/last.webp"
+              alt="Nighttime"
+              className="w-full h-full object-cover brightness-50"
+            />
+            <div className="absolute inset-0 flex items-center justify-center">
+							<ContactSection /> 
+						</div>
+          </section>
+          
+          
         </div>
       </div>
     </div>

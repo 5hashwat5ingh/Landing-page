@@ -2,25 +2,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-
-// ── Variants defined outside the component ──────────────────────────────────
-const containerVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.08 } }, // tighter stagger for a grid
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
-  },
-};
-// ────────────────────────────────────────────────────────────────────────────
 
 const Gallery = () => {
+  // Static gallery items with placeholder images
   const galleryItems = [
     {
       imageSrc:
@@ -69,31 +53,22 @@ const Gallery = () => {
   return (
     <div title="Gallery" className="flex flex-col items-center">
       <div className="p-6 rounded-lg max-w-7xl mx-5 mb-[5%] justify-center w-full pt-0">
-        {/* Stagger container wraps the entire image grid */}
-        <motion.div
-          className="mt-8 px-4 grid grid-cols-2 gap-3 lg:gap-10 mb-8"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false, amount: 0.2 }}
-        >
+        <div className="mt-8 px-4 grid grid-cols-2 gap-3 lg:gap-10 mb-8">
           <div className="col-span-2 lg:col-span-1 flex flex-col gap-3 lg:gap-10">
-            <motion.div variants={itemVariants} className="w-full">
+            <div className="w-full">
               <img
                 className="w-full h-[180px] md:h-[400px] rounded-[16px] border-2 border-purple-400/30 overflow-hidden object-cover bg-white/5 backdrop-blur-sm shadow-xl hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer"
                 src={img1.imageSrc}
                 alt={img1.alt}
               />
-            </motion.div>
+            </div>
             <div className="grid grid-cols-2 gap-3 lg:gap-5">
-              <motion.img
-                variants={itemVariants}
+              <img
                 className="w-full h-[154px] rounded-[16px] border-2 border-purple-400/30 overflow-hidden object-cover bg-white/5 backdrop-blur-sm shadow-xl hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer"
                 src={img2.imageSrc}
                 alt={img2.alt}
               />
-              <motion.img
-                variants={itemVariants}
+              <img
                 className="w-full h-[154px] rounded-[16px] border-2 border-purple-400/30 overflow-hidden object-cover bg-white/5 backdrop-blur-sm shadow-xl hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer"
                 src={img3.imageSrc}
                 alt={img3.alt}
@@ -103,35 +78,32 @@ const Gallery = () => {
 
           <div className="col-span-2 lg:col-span-1 flex flex-col gap-3 lg:gap-10">
             <div className="grid grid-cols-2 gap-3 lg:gap-5">
-              <motion.img
-                variants={itemVariants}
+              <img
                 className="w-full h-[154px] rounded-[16px] border-2 border-purple-400/30 overflow-hidden object-cover bg-white/5 backdrop-blur-sm shadow-xl hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer"
                 src={img4.imageSrc}
                 alt={img4.alt}
               />
-              <motion.img
-                variants={itemVariants}
+              <img
                 className="w-full h-[154px] rounded-[16px] border-2 border-purple-400/30 overflow-hidden object-cover bg-white/5 backdrop-blur-sm shadow-xl hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer"
                 src={img5.imageSrc}
                 alt={img5.alt}
               />
             </div>
             <div className="grid grid-cols-2 gap-3 lg:gap-5">
-              <motion.img
-                variants={itemVariants}
+              <img
                 className="w-full h-[154px] rounded-[16px] border-2 border-purple-400/30 overflow-hidden object-cover bg-white/5 backdrop-blur-sm shadow-xl hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer"
                 src={img6.imageSrc}
                 alt={img6.alt}
               />
-              <motion.img
-                variants={itemVariants}
+              <img
                 className="w-full h-[154px] rounded-[16px] border-2 border-purple-400/30 overflow-hidden object-cover bg-white/5 backdrop-blur-sm shadow-xl hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer"
                 src={img7.imageSrc}
                 alt={img7.alt}
               />
             </div>
+            
           </div>
-        </motion.div>
+        </div>
       </div>
     </div>
   );
