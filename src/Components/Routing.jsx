@@ -1,9 +1,7 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import IndexHome from "./homepage/Index-home";
 import ContactUs from "./Contact/ContactUs";
 import Members from "./Team/Members";
 import CampusAmbassadorProgram from "./CampusAmbassador/CampusAmbassadorProgram";
-import AuthForm from "./Profile/AuthForm";
 import ProfileRoute from "./Profile/ProfileRoute";
 import Events from "./Events/Events";
 import EventDetail from "./Events/EventDetail";
@@ -33,8 +31,9 @@ function Routing() {
       style={{
         paddingLeft: "calc(var(--sidebar-width) + 0px)", // Ensure px unit
         width: "100%",
+  
       }}
-      className="min-h-screen bg-gray-900"
+      className="min-h-screen bg-gray-900 overflow-hidden"
     >
       <Toaster />
 
