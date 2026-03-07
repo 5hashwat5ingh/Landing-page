@@ -475,24 +475,24 @@ export function Hero() {
               alt="Daytime"
               className="absolute inset-0 w-full h-full object-cover"
             />
-            <div className="z-10">{/*<Logo />*/}</div>
+            <div className="z-10"><Logo /></div>
           </section>
 
           <section className="scene scene-2 min-h-screen flex items-center justify-center relative">
             <img
-              src="/second.png"
+              src="/first_location.webp"
               alt="Cave"
               className="absolute inset-0 w-full h-full object-cover"
             />
-            <div className="z-10">{/*<ThemeInfoMob />*/}</div>
+            <div className="z-10"><Hero2Section /></div>
           </section>
 
           <section className="gradient-section  flex items-center justify-center relative">
             <div className="absolute inset-0 bg-[#030919]"></div>
           </section>
 
-          <section className="scene scene-4 min-h-screen flex items-center justify-center bg-[#030919] relative">
-            <div className="z-10">{/*<AftermoviesMob />*/}</div>
+          <section className="scene scene-4 min-h-screen flex items-center justify-center bg-[#030919] relative m-5">
+            <div className="z-10"><Aftermovies /></div>
           </section>
 
           <section className="scene scene-6 min-h-screen flex items-center justify-center bg-[#030919] relative">
@@ -569,11 +569,12 @@ export function Hero() {
             </div>
           </section>
           <section className="scene scene-6 absolute inset-0 opacity-0">
-            <img
+            <canvas ref={canvasRefs.Last} />
+            {/*<img
               src="/second_location.webp"
               alt="Dark Wizard"
               className="w-full h-full object-cover"
-            />
+            />*/}
             <div className="absolute scene-content inset-0 flex items-center justify-center">
               <Marchandise />
             </div>
