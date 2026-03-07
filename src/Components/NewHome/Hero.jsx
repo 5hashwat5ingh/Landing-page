@@ -11,7 +11,6 @@ import { useStore } from "../../store";
 import { FaWhatsapp } from "react-icons/fa";
 import Aftermovies from "./Aftermovies";
 
-import Gallery from "./Gallery";
 import Marchandise from "../homepage/merchandise/Merchandise";
 import Hero2Section from "../homepage/hero2";
 import Slider from "../homepage/slider/Slider";
@@ -19,6 +18,7 @@ import firstSceneLinksRaw from "./1st.json?raw";
 import secondSceneLinksRaw from "./2nd.json?raw";
 import thirdSceneLinksRaw from "./3rd.json?raw";
 import fourthSceneLinksRaw from "./4th.json?raw";
+import X from "./X";
 gsap.registerPlugin(ScrollTrigger);
 
 const buildFrameMap = (rawLinks, maxFrame) => {
@@ -547,7 +547,7 @@ export function Hero() {
           <section className="scene scene-3 absolute inset-0 opacity-0">
             <canvas ref={canvasRefs.gatetoforest} />
             
-            <div className="absolute inset-0 flex items-center justify-start ">
+            <div className="absolute inset-0 flex items-center justify-center ">
 							<Slider
 							/>
 						</div>
@@ -565,7 +565,7 @@ export function Hero() {
           <section className="scene scene-5 absolute inset-0 opacity-0">
             <canvas ref={canvasRefs.ForestToworld} />
             <div className="absolute scene-content inset-0 flex items-center justify-center">
-              <Gallery  />
+              <Marchandise />
             </div>
           </section>
           <section className="scene scene-6 absolute inset-0 opacity-0">
@@ -576,7 +576,7 @@ export function Hero() {
               className="w-full h-full object-cover"
             />*/}
             <div className="absolute scene-content inset-0 flex items-center justify-center">
-              <Marchandise />
+              <X />
             </div>
             
           </section>

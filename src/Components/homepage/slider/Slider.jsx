@@ -35,7 +35,7 @@ const ArtistGallery = () => {
   };
 
   return (
-    <div className="w-full max-w-5xl">
+    <div className="w-full max-w-7xl">
       <div className="rounded-2xl border border-white/10 bg-black/40 backdrop-blur-md p-4 md:p-6">
         <div className="mb-4 flex items-center justify-between gap-4">
           <h2 className="text-2xl md:text-3xl font-bold text-[#FF8888] text-left">
@@ -92,9 +92,7 @@ const ArtistGallery = () => {
           ))}
         </div>
 
-        <p className="mt-4 text-right text-xs md:text-sm text-gray-300">
-          {startIndex + 1}-{Math.min(startIndex + cardsPerView, artistsData.length)} of {artistsData.length}
-        </p>
+       
       </div>
     </div>
   );
