@@ -392,25 +392,27 @@ export function Hero() {
           <section className="gradient-section  flex items-center justify-center relative">
             <div className="absolute inset-0 bg-[#030919]"></div>
           </section>
+          <section className="scene scene-6 min-h-screen flex items-center justify-center bg-[#030919] relative">
+            <img src="./first_location.webp" className="absolute inset-0 w-full h-full object-cover" alt="" />
+            <div className="z-10">
+              <h1 className="text-5xl md:text-6xl font-karantina text-white tracking-[3px] pt-8 text-center drop-shadow-[0_4px_20px_rgba(252,155,155,1)]">
+                
+              </h1>
+              <Slider />
+            </div>
+          </section>
 
           <section className="scene scene-4 min-h-screen flex items-center justify-center bg-[#030919] relative m-5">
             <div className="z-10"><Aftermovies /></div>
           </section>
 
-          <section className="scene scene-6 min-h-screen flex items-center justify-center bg-[#030919] relative">
-            <div className="z-10">
-              <h1 className="text-5xl md:text-6xl font-karantina text-white tracking-[3px] pt-8 text-center drop-shadow-[0_4px_20px_rgba(252,155,155,1)]">
-                GALLERY
-              </h1>
-              {/*<Gallery />*/}
-            </div>
-          </section>
+          
 
           <section className="scene scene-8 min-h-screen flex items-center justify-center bg-[#030919] relative">
-            <div className="z-10">{/*<Contact />*/}</div>
+            <div className="z-10"><Marchandise /></div>
           </section>
           <section className="w-screen flex items-center justify-center bg-black relative">
-            <div className="z-10">{/*<Footer />*/}</div>
+            <div className="z-10"><X /></div>
           </section>
         </div>
       </div>
