@@ -29,9 +29,9 @@ const FlipCard = () => {
   };
 
   return (
-    <div className="min-h-screen w-90% flex flex-col items-center justify-center  bg-gradient-to-r from-gray-900  to-black p-10">
-      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center mb-10">
-        Join us <span className="text-cyan-100">'The ABH Community'</span>
+    <div className="min-h-screen w-90% flex flex-col items-center justify-center   p-10">
+      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#FF8888] text-center mb-10">
+        Join us <span >'The ABH Community'</span>
         
       </h2>
 
