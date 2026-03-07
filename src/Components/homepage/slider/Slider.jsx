@@ -72,7 +72,7 @@ const ArtistGallery = () => {
               whileHover={{ y: -4 }}
               className="group relative overflow-hidden rounded-xl border border-white/10 bg-black/30"
             >
-              <div className="aspect-[3/4] w-full overflow-hidden">
+              <div className="aspect-3/4 w-full overflow-hidden">
                 <img
                   src={artist.link}
                   alt={artist.name}

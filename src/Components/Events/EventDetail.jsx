@@ -87,10 +87,10 @@ const EventDetail = () => {
   }
 
   return (
-    <div className="bg-gradient-to-b from-gray-900 to-black min-h-screen text-gray-100">
+    <div className="bg-linear-to-b from-gray-900 to-black min-h-screen text-gray-100">
       <div className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
         <h1 className="text-4xl font-extrabold text-purple-400 sm:text-5xl text-center mb-4">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-300 via-purple-200 to-indigo-100 animate-pulse">
+          <span className="bg-clip-text text-transparent bg-linear-to-r from-pink-300 via-purple-200 to-indigo-100 animate-pulse">
             {event.name}
           </span>
         </h1>
@@ -147,7 +147,7 @@ const EventDetail = () => {
                 className={`w-full text-white font-bold py-3 px-6 rounded-lg transition-all duration-200 shadow-lg transform hover:-translate-y-1 ${
                   isRegistered
                     ? "bg-red-500 hover:bg-red-600 shadow-red-500/20 hover:shadow-red-500/40"
-                    : "  cursor-pointer bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600 shadow-purple-500/20 hover:shadow-purple-500/40"
+                    : "  cursor-pointer bg-linear-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600 shadow-purple-500/20 hover:shadow-purple-500/40"
                 }`}
               >
                 {isRegistered ? "Already Registered" : "Register Now"}
@@ -162,7 +162,7 @@ const EventDetail = () => {
                 {event.rules.map((rule, index) => (
                   <li key={index} className="text-gray-300 flex items-start">
                     <svg
-                      className="h-5 w-5 text-purple-500 mr-2 mt-0.5 flex-shrink-0"
+                      className="h-5 w-5 text-purple-500 mr-2 mt-0.5 shrink-0"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 20 20"
                       fill="currentColor"

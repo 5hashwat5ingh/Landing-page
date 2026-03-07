@@ -29,7 +29,7 @@ const HeroSection = () => {
         />
 
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/10 to-black/70"></div>
+        <div className="absolute inset-0 bg-linear-to-b from-transparent via-black/10 to-black/70"></div>
 
         {/* Abhyudaya Logo & Date */}
         <div className="relative z-10 flex flex-col items-center justify-center w-full h-full space-y-6">
@@ -45,15 +45,15 @@ const HeroSection = () => {
             />
 
             <h1 className=" text-3xl  sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl font-serif text-white tracking-wide uppercase text-center">
-              <span className="bg-gradient-to-r from-[#f7d77f] to-[#b58b3b] bg-clip-text text-transparent drop-shadow-lg">
+              <span className="bg-linear-to-r from-[#f7d77f] to-[#b58b3b] bg-clip-text text-transparent drop-shadow-lg">
                 4 APRIL - 6 APRIL, 2025
               </span>
             </h1>
 
             {!user && (
               <Link to="/profile">
-                <div className="mt-4 flex items-center justify-center gap-x-6 md:hidden flex">
-                  <span className="rounded-full bg-gradient-to-r from-purple-300 to-indigo-300 px-6 py-3 text-md text-gray-900 font-semibold shadow-sm hover:from-purple-600 hover:to-indigo-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 hover:text-gray-100 focus-visible:outline-indigo-400 transition-all duration-300 cursor-pointer">
+                <div className="mt-4 flex items-center justify-center gap-x-6 md:hidden">
+                  <span className="rounded-full bg-linear-to-r from-purple-300 to-indigo-300 px-6 py-3 text-md text-gray-900 font-semibold shadow-sm hover:from-purple-600 hover:to-indigo-700 focus-visible:outline-2 focus-visible:outline-offset-2 hover:text-gray-100 focus-visible:outline-indigo-400 transition-all duration-300 cursor-pointer">
                     Register Now
                   </span>
                 </div>

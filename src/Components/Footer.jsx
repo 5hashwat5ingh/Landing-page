@@ -106,10 +106,10 @@ const Footer = ({ isSidebarOpen }) => {
       >
         {/* YouTube Section */}
         <div className="flex flex-col w-full md:w-1/3 lg:w-1/3 xl:w-1/3">
-          <div className="rounded-lg overflow-hidden flex-1 h-[250px] md:h-[240px] lg:h-[250px]">
+          <div className="rounded-lg overflow-hidden flex-1 h-62.5 md:h-60 lg:h-62.5">
           <iframe
   src="https://www.youtube.com/embed/ziAZfHGa270?si=HQ_GKi6ODGPezuPB"
-  className="w-full h-[250px] md:h-[240px] lg:h-[250px] rounded-xl shadow-lg"
+  className="w-full h-62.5 md:h-60 lg:h-62.5 rounded-xl shadow-lg"
   style={{ border: 0 }}
   allow=" web-share; fullscreen"
   allowFullScreen={true}  
@@ -121,10 +121,10 @@ const Footer = ({ isSidebarOpen }) => {
 
         {/* Map Section */}
         <div className="flex flex-col w-full md:w-1/3 lg:w-1/3 xl:w-1/3">
-          <div className="rounded-lg overflow-hidden flex-1 h-[250px] md:h-[240px]  lg:h-[250px]">
+          <div className="rounded-lg overflow-hidden flex-1 h-62.5 md:h-60  lg:h-62.5">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1791.2985797825392!2d83.4331276!3d26.7314295!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39915ca3e2aa136b%3A0xc039bdf0211338a9!2sMMM%20University%20of%20Technology!5e0!3m2!1sen!2sin!4v1710001234567"
-              className="w-full h-[250px] md:h-[240px] lg:h-[250px] rounded-xl shadow-lg"
+              className="w-full h-62.5 md:h-60 lg:h-62.5 rounded-xl shadow-lg"
               style={{ border: 0 }}
               allowFullScreen=""
               referrerPolicy="no-referrer-when-downgrade"
@@ -134,7 +134,7 @@ const Footer = ({ isSidebarOpen }) => {
 
         {/* Contact Cards Section */}
         <div className="flex flex-col w-full md:w-1/3 lg:w-1/3 xl:w-1/3">
-          <div className="grid grid-cols-2 gap-2 md:gap-2 lg:gap-3 w-full h-[250px] md:h-[240px] lg:h-[250px]">
+          <div className="grid grid-cols-2 gap-2 md:gap-2 lg:gap-3 w-full h-62.5 md:h-60 lg:h-62.5">
             {contacts.map((person, index) => (
               <div
                 key={index}
@@ -153,7 +153,7 @@ const Footer = ({ isSidebarOpen }) => {
                   {/* Email Icon */}
                   <a
                     href={`mailto:${person.email}`}
-                    className="text-white hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-blue-400 to-blue-600 transform hover:scale-110 transition-all hover:shadow-glow p-1"
+                    className="text-white hover:text-transparent hover:bg-clip-text hover:bg-linear-to-r from-blue-400 to-blue-600 transform hover:scale-110 transition-all hover:shadow-glow p-1"
                   >
                     <FaEnvelope size={iconSize} />
                   </a>
@@ -161,7 +161,7 @@ const Footer = ({ isSidebarOpen }) => {
                   {/* Phone Icon */}
                   <a
                     href={`tel:${person.phone}`}
-                    className="text-white hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-blue-400 to-blue-600 transform hover:scale-110 transition-all hover:shadow-glow p-1"
+                    className="text-white hover:text-transparent hover:bg-clip-text hover:bg-linear-to-r from-blue-400 to-blue-600 transform hover:scale-110 transition-all hover:shadow-glow p-1"
                   >
                     <FaPhone size={17}  />
                   </a>
@@ -177,25 +177,25 @@ const Footer = ({ isSidebarOpen }) => {
         <div className="flex space-x-4 pl-2">
           <a
             href="https://www.facebook.com/abhyudaya.mmmut/"
-            className="text-white hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-blue-400 to-blue-600 transform hover:scale-110 transition-all hover:shadow-glow p-1"
+            className="text-white hover:text-transparent hover:bg-clip-text hover:bg-linear-to-r from-blue-400 to-blue-600 transform hover:scale-110 transition-all hover:shadow-glow p-1"
           >
             <FaFacebookF size={iconSize} />
           </a>
           <a
             href="https://www.instagram.com/abhyudaya.mmmut/?hl=en"
-            className="text-white hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-pink-500 via-purple-500 to-orange-400 transform hover:scale-110 transition-all hover:shadow-glow p-1"
+            className="text-white hover:text-transparent hover:bg-clip-text hover:bg-linear-to-r from-pink-500 via-purple-500 to-orange-400 transform hover:scale-110 transition-all hover:shadow-glow p-1"
           >
             <FaInstagram size={iconSize} />
           </a>
           <a
             href="https://www.linkedin.com/in/abhyudaya-mmmut-3b96372b1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-            className="text-white hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-blue-500 to-blue-700 transform hover:scale-110 transition-all hover:shadow-glow p-1"
+            className="text-white hover:text-transparent hover:bg-clip-text hover:bg-linear-to-r from-blue-500 to-blue-700 transform hover:scale-110 transition-all hover:shadow-glow p-1"
           >
             <FaLinkedinIn size={iconSize} />
           </a>
           <a
             href="mailto:abhyudayammmut@gmail.com"
-            className="text-white hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-yellow-400 to-red-500 transform hover:scale-110 transition-all hover:shadow-glow p-1"
+            className="text-white hover:text-transparent hover:bg-clip-text hover:bg-linear-to-r from-yellow-400 to-red-500 transform hover:scale-110 transition-all hover:shadow-glow p-1"
           >
             <FaEnvelope size={iconSize} />
           </a>

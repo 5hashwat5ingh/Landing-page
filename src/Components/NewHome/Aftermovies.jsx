@@ -58,7 +58,7 @@ export default function Aftermovies() {
                     onClick={() => setSelectedYear(Number(year))}
                     className={`shrink-0 rounded-md border px-4 py-2 text-sm shadow-md transition-all sm:text-base md:text-lg ${
                       isActive
-                        ? "translate-y-[-3px] border-[#FF8888] text-white shadow-[#ff8888]"
+                        ? "-translate-y-0.75 border-[#FF8888] text-white shadow-[#ff8888]"
                         : "border-white hover:-translate-y-1"
                     }`}
                   >
@@ -69,7 +69,7 @@ export default function Aftermovies() {
             </div>
 
             {/* Video Frame */}
-            <div className="mb-4 aspect-video w-full max-w-[760px] overflow-hidden rounded-lg bg-black shadow-[0_0_20px_rgba(255,255,255,0.1)]">
+            <div className="mb-4 aspect-video w-full max-w-190 overflow-hidden rounded-lg bg-black shadow-[0_0_20px_rgba(255,255,255,0.1)]">
               <iframe
                 width="100%"
                 height="100%"
@@ -102,11 +102,11 @@ export default function Aftermovies() {
             </p>
 
             {/* Stats in Gradient Boxes */}
-            <div className="grid w-full grid-cols-2 gap-3 sm:gap-4 lg:max-w-[520px]">
+            <div className="grid w-full grid-cols-2 gap-3 sm:gap-4 lg:max-w-130">
               {stats.map(({ value, label }) => (
                 <div
                   key={label}
-                  className="rounded-lg bg-gradient-to-br from-[#FFC370] to-[#FF8888] p-3 text-center sm:p-4 md:p-5"
+                  className="rounded-lg bg-linear-to-br from-[#FFC370] to-[#FF8888] p-3 text-center sm:p-4 md:p-5"
                 >
                   <p className="text-xl font-semibold text-black sm:text-2xl md:text-3xl">
                     {value}

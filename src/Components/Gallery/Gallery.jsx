@@ -16,7 +16,7 @@ const Gallery = () => {
   return (
     <div className="bg-[#120c0f] pt-16 min-h-screen">
     <h1 className="text-4xl font-extrabold text-purple-400 sm:text-5xl text-center mb-16">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-300 via-purple-200 to-indigo-100 animate-pulse">
+            <span className="bg-clip-text text-transparent bg-linear-to-r from-pink-300 via-purple-200 to-indigo-100 animate-pulse">
               Gallery-`de`-24
             </span>
           </h1>

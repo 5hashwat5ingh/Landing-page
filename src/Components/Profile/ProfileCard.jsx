@@ -29,7 +29,7 @@ const ProfileCard = () => {
     return <Navigate to="/"> </Navigate>;
   }
   return (
-    <div className="relative min-h-screen flex items-center justify-center px-4 py-6 sm:p-6 bg-[radial-gradient(circle_at_top,#0f0c29,#302b63,_#24243e)]">
+    <div className="relative min-h-screen flex items-center justify-center px-4 py-6 sm:p-6 bg-[radial-gradient(circle_at_top,#0f0c29,#302b63,#24243e)]">
       {/* Background Logo */}
       <img
         src={Abhyudaya}

@@ -35,11 +35,11 @@ const FlipCard = () => {
         
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-16 w-full max-w-[1500px]">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-16 w-full max-w-375">
         {["black", "white"].map((color) => (
           <div
             key={color}
-            className={`rounded-2xl overflow-hidden shadow-2xl p-2  sm:w-full bg-gradient-to-br from-gray-800 to-gray-700 hover:scale-105 transition-transform duration-500 ${
+            className={`rounded-2xl overflow-hidden shadow-2xl p-2  sm:w-full bg-linear-to-br from-gray-800 to-gray-700 hover:scale-105 transition-transform duration-500 ${
               selectedColor === color ? "ring-2 sm:ring-3  ring-purple-400" : ""
             }`}
             onClick={() => setSelectedColor(color)}
@@ -47,7 +47,7 @@ const FlipCard = () => {
             <img
               src={tshirtDetails[color].image}
               alt={tshirtDetails[color].title}
-              className="w-full h-[250px] sm:h-[400px] object-cover rounded-lg mb-6"
+              className="w-full h-62.5 sm:h-100 object-cover rounded-lg mb-6"
               loading="lazy"
             />
             <h3 className="text-2xl sm:text-3xl font-bold text-white text-center">
