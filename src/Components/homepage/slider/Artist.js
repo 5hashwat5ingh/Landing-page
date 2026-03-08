@@ -17,12 +17,12 @@ const artistsData = [
     link: "https://i.postimg.cc/fT3rKCtH/BHarat-band.png",
   },
   {
-    name: "DJ FAIZAN",
-    link: "https://i.postimg.cc/tgzSTmwg/DJ-faizan.png",
+    name: "DJ Tracer",
+    link: "https://res.cloudinary.com/dzqtx9kms/image/upload/v1772787937/width_550_fubt6j.jpg",
   },
   {
-    name: "DJ Sid",
-    link: "https://i.postimg.cc/vmy2GdPj/DJ-Sid.png",
+    name: "Shivam Chawhan",
+    link: "https://res.cloudinary.com/dzqtx9kms/image/upload/v1772787937/width_550_2_ibtksp.jpg",
   },
   {
     name: "Gajendra Verma",

@@ -37,17 +37,6 @@ const EditorialArtistCard = ({ artistName, bio, imageUrl, tags, trackName }) => 
               {artistName}
             </h3>
           </div>
-          
-          {/* Circular Play Button */}
-          <button className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full bg-white text-black hover:scale-105 hover:bg-gray-200 transition-all shadow-[0_0_20px_rgba(255,255,255,0.4)] group/play">
-            <svg 
-              className="w-4 h-4 ml-0.5 transition-transform group-hover/play:scale-110" 
-              fill="currentColor" 
-              viewBox="0 0 24 24"
-            >
-              <path d="M8 5v14l11-7z" />
-            </svg>
-          </button>
         </div>
 
         <p className="text-white/90 text-xs sm:text-sm leading-relaxed line-clamp-2 font-mooli drop-shadow-md">
