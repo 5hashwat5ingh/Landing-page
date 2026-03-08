@@ -70,9 +70,7 @@ export default function ArtistGallery() {
 
       {/* Infinite Horizontal Marquee */}
       <div className="relative w-full overflow-hidden py-4 z-10">
-        {/* Left/Right fading edges for a smooth transition effect */}
-        <div className="absolute top-0 left-0 w-8 sm:w-24 h-full bg-linear-to-r from-black via-black/80 to-transparent z-20 pointer-events-none"></div>
-        <div className="absolute top-0 right-0 w-8 sm:w-24 h-full bg-linear-to-l from-black via-black/80 to-transparent z-20 pointer-events-none"></div>
+
 
         <motion.div 
           initial={{ opacity: 0 }}
@@ -88,9 +86,9 @@ export default function ArtistGallery() {
                 key={`set1-${i}`}
                 artistName={artist.name}
                 trackName="Featured Artist"
-                bio="Experience the magic of past performances that brought the festival to life."
+                bio={artist.bio}
                 imageUrl={artist.link}
-                tags={['Live Performance']}
+                tags={artist.tags}
               />
             ))}
           </div>
@@ -101,9 +99,9 @@ export default function ArtistGallery() {
                 key={`set2-${i}`}
                 artistName={artist.name}
                 trackName="Featured Artist"
-                bio="Experience the magic of past performances that brought the festival to life."
+                bio={artist.bio}
                 imageUrl={artist.link}
-                tags={['Live Performance']}
+                tags={artist.tags}
               />
             ))}
           </div>
