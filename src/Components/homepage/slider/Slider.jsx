@@ -37,32 +37,27 @@ const ArtistGallery = () => {
   };
 
   return (
-    <div className="relative mx-auto w-full max-w-screen-2xl px-4 sm:px-6">
-      <div className="pointer-events-none absolute -left-10 top-0 h-40 w-40 rounded-full  blur-3xl" />
-      <div className="pointer-events-none absolute -right-8 bottom-4 h-44 w-44 rounded-full bg-fuchsia-400/20 blur-3xl" />
-      <div className="pointer-events-none absolute inset-0 bg-linear-to-br from-amber-200/10 via-transparent to-sky-200/10" />
+    <div className="relative mx-auto w-full max-w-screen-2xl px-4 py-12 sm:px-6 mb-16">
+      
+      <motion.div 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.2, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="flex flex-col items-center mb-10"
+      >
+        <h2 className="bg-linear-to-r from-purple-300 to-pink-300 bg-clip-text text-center font-karantina text-4xl font-bold tracking-[4px] text-transparent drop-shadow-md sm:text-5xl md:text-6xl uppercase">
+          FEATURED ARTISTS
+        </h2>
+      </motion.div>
 
-      <div className="relative rounded-3xl border border-amber-300/30 bg-slate-950/75 p-5 shadow-2xl backdrop-blur-xl md:p-8">
-        <div className="mb-5 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            
-
-            <h2 className="bg-linear-to-r from-rose-200 via-amber-100 to-sky-200 bg-clip-text text-left font-karantina text-5xl tracking-[2px] text-transparent md:text-6xl">
-              Previous Artists
-            </h2>
-
-            
-            
-          </div>
-
-          <div className="flex items-center gap-2 sm:gap-3">
-            
-            
-
+      <div className="relative w-full">
+        {/* Navigation positioned top right of grid */}
+        <div className="mb-6 flex justify-end gap-3 px-2">
             <button
               type="button"
               onClick={showPrev}
-              className="grid h-11 w-11 place-items-center rounded-full border border-white/15 bg-linear-to-r from-amber-200 to-rose-200 text-gray-900 transition-all duration-300 hover:-translate-y-0.5 hover:from-rose-300 hover:to-amber-300"
+              className="grid h-10 w-10 place-items-center rounded-full border border-white/20 bg-black/40 text-white backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/20"
               aria-label="Previous artists"
             >
               ‹
@@ -70,23 +65,22 @@ const ArtistGallery = () => {
             <button
               type="button"
               onClick={showNext}
-              className="grid h-11 w-11 place-items-center rounded-full border border-white/15 bg-linear-to-r from-amber-200 to-rose-200 text-gray-900 transition-all duration-300 hover:-translate-y-0.5 hover:from-rose-300 hover:to-amber-300"
+              className="grid h-10 w-10 place-items-center rounded-full border border-white/20 bg-black/40 text-white backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/20"
               aria-label="Next artists"
             >
               ›
             </button>
-          </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6 xl:grid-cols-3">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
           {visibleArtists.map((artist, index) => (
             <motion.article
               key={`${artist.name}-${startIndex}-${index}`}
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.35, ease: 'easeOut' }}
+              transition={{ duration: 0.35, delay: index * 0.1, ease: 'easeOut' }}
               whileHover={{ y: -6 }}
-              className="group relative overflow-hidden rounded-2xl border border-white/15 bg-white/5"
+              className="group relative overflow-hidden rounded-2xl border border-white/20 bg-black/20 backdrop-blur-sm shadow-xl"
             >
               <div className="aspect-3/4 w-full overflow-hidden">
                 <img
@@ -97,30 +91,28 @@ const ArtistGallery = () => {
                 />
               </div>
 
-              <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-slate-950/90 via-transparent to-transparent" />
+              <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/90 via-black/20 to-transparent" />
 
-              <div className="absolute inset-x-0 bottom-0 p-3">
-                <div className="rounded-xl border border-white/15 bg-white/5 px-3 py-2 backdrop-blur-sm">
-                  <h3 className="text-sm md:text-base font-semibold text-slate-100/90 truncate">
-                    {artist.name}
-                  </h3>
-                </div>
+              <div className="absolute inset-x-0 bottom-0 p-4">
+                <h3 className="text-lg md:text-xl font-bold text-white drop-shadow-md truncate">
+                  {artist.name}
+                </h3>
               </div>
             </motion.article>
           ))}
         </div>
 
         {maxStartIndex > 0 && (
-          <div className="mt-6 flex justify-center gap-2">
+          <div className="mt-8 flex justify-center gap-2">
             {Array.from({ length: maxStartIndex + 1 }).map((_, idx) => (
               <button
                 key={`artist-dot-${idx}`}
                 type="button"
                 onClick={() => setStartIndex(idx)}
-                className={`h-2 rounded-full transition-all duration-300 ${
+                className={`h-1.5 rounded-full transition-all duration-300 ${
                   idx === startIndex
-                    ? 'w-8 bg-amber-200'
-                    : 'w-2 bg-white/40 hover:bg-white/70'
+                    ? 'w-8 bg-purple-400'
+                    : 'w-2 bg-white/30 hover:bg-white/60'
                 }`}
                 aria-label={`Go to artist slide ${idx + 1}`}
               />

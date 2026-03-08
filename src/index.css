@@ -126,3 +126,4 @@ html {
 }
 
 
+@font-face { font-family: 'EnchantedCustom'; src: url('/fonts/Sdfortimburtondemo-ALoW2.ttf') format('truetype'); font-weight: normal; font-style: normal; } .font-enchanted { font-family: 'EnchantedCustom', sans-serif; }
