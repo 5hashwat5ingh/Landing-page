@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
@@ -99,7 +100,10 @@ const MerchCard = ({
           </ul>
 
           {/* Action Button (Only visible on selected) */}
-          <div className={`mt-2 sm:mt-4 overflow-hidden transition-all duration-500 ${isSelected ? 'max-h-20 opacity-100' : 'max-h-0 opacity-0'}`}>
+          <div className={`mt-2 sm:mt-4 overflow-hidden transition-all duration-500 ${isSelected ? 'max-h-24 opacity-100' : 'max-h-0 opacity-0'}`}>
+            <p className="text-center text-yellow-300 font-bold text-xs sm:text-sm mb-2 drop-shadow-[0_0_8px_rgba(253,224,71,0.6)]">
+              ₹250/- (first 50 orders)
+            </p>
             <a 
               href="https://forms.gle/PDNFEp92rBMiLqxQ8" 
               target="_blank" 

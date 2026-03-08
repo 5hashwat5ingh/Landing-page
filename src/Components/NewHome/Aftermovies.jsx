@@ -1,5 +1,23 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
+
+/* Animation Wrapper */
+const AnimatedDiv = ({ children }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 60 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 1.2, ease: "easeOut" }}
+      className="w-full flex justify-center"
+    >
+      {children}
+    </motion.div>
+  );
+};
 
 export default function Aftermovies() {
   const [activeTab, setActiveTab] = useState('2025');
@@ -18,49 +36,50 @@ export default function Aftermovies() {
   ];
 
   return (
-    <section className="relative z-10 w-full max-w-[1200px] mx-auto px-2 sm:px-6 md:px-8 pb-24 pt-12">
-      
-      <style>
-        {`
-          @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap');
-          .font-cinzel { font-family: 'Cinzel Decorative', serif; }
-        `}
-      </style>
-
-      {/* Background ambient glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[60%] bg-[#b388eb]/10 blur-[150px] rounded-full pointer-events-none"></div>
-
-      {/* BENTO BOX GRID */}
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 sm:gap-6 relative z-10">
+    <AnimatedDiv>
+      <section className="relative z-10 w-full max-w-[1200px] mx-auto px-2 sm:px-6 md:px-8 pb-24 pt-12">
         
-        {/* CARD 1: The "About" Lore (Spans 2 columns, 2 rows) */}
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true }}
-          className="lg:col-span-2 lg:row-span-2 bg-black/60 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-6 lg:p-10 relative overflow-hidden group hover:bg-black/70 hover:border-white/20 transition-all duration-500"
-        >
-          
-          {/* Decorative watermark text */}
-          <div className="absolute -bottom-10 -right-10 text-[8rem] font-cinzel font-black text-white/5 tracking-tighter pointer-events-none transform -rotate-6 group-hover:scale-105 transition-transform duration-1000">
-            FEST
-          </div>
+        <style>
+          {`
+            @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap');
+            .font-cinzel { font-family: 'Cinzel Decorative', serif; }
+          `}
+        </style>
 
-          <div className="relative z-10">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-cinzel font-bold tracking-widest leading-none drop-shadow-lg mb-6 break-words">
-              <span className="block text-white mb-2">ABOUT</span>
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#e8b5d6] to-[#b388eb]">ABHYUDAYA</span>
-            </h2>
+        {/* Background ambient glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[60%] bg-[#b388eb]/10 blur-[150px] rounded-full pointer-events-none"></div>
+
+        {/* BENTO BOX GRID */}
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 sm:gap-6 relative z-10">
+          
+          {/* CARD 1: The "About" Lore (Spans 2 columns, 2 rows) */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="lg:col-span-2 lg:row-span-2 bg-black/60 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-6 lg:p-10 relative overflow-hidden group hover:bg-black/70 hover:border-white/20 transition-all duration-500"
+          >
             
-            <p className="text-gray-300 text-sm sm:text-base leading-relaxed font-light mb-6">
-              Abhyudaya is the annual Art, Cultural & Literary fest of MMMUT, Gorakhpur. A vibrant confluence of creativity and passion where art breathes, culture thrives, and literature resonates.
-            </p>
-            <p className="text-gray-300 text-sm sm:text-base leading-relaxed font-light">
-              This year's theme: <span className="font-enchanted font-bold text-black bg-white/80 px-2 py-0.5 rounded-sm mx-1 tracking-widest drop-shadow-sm shadow-[0_0_10px_rgba(255,255,255,0.5)]">AN ENCHANTED ESCAPADE</span> — a kaleidoscopic fusion of tradition and innovation.
-            </p>
-          </div>
-        </motion.div>
+            {/* Decorative watermark text */}
+            <div className="absolute -bottom-10 -right-10 text-[8rem] font-cinzel font-black text-white/5 tracking-tighter pointer-events-none transform -rotate-6 group-hover:scale-105 transition-transform duration-1000">
+              FEST
+            </div>
+
+            <div className="relative z-10">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-cinzel font-bold tracking-widest leading-none drop-shadow-lg mb-6 break-words">
+                <span className="block text-white mb-2">ABOUT</span>
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#e8b5d6] to-[#b388eb]">ABHYUDAYA</span>
+              </h2>
+              
+              <p className="text-gray-300 text-sm sm:text-base leading-relaxed font-light mb-6">
+                Abhyudaya is the annual Art, Cultural & Literary fest of MMMUT, Gorakhpur. A vibrant confluence of creativity and passion where art breathes, culture thrives, and literature resonates.
+              </p>
+              <p className="text-gray-300 text-sm sm:text-base leading-relaxed font-light">
+                This year's theme: <span className="font-enchanted font-bold text-black bg-white/80 px-2 py-0.5 rounded-sm mx-1 tracking-widest drop-shadow-sm shadow-[0_0_10px_rgba(255,255,255,0.5)]">AN ENCHANTED ESCAPADE</span> — a kaleidoscopic fusion of tradition and innovation.
+              </p>
+            </div>
+          </motion.div>
 
         {/* CARD 2: The Aftermovie (Spans 2 columns, 2 rows) */}
         <motion.div 
@@ -101,6 +120,7 @@ export default function Aftermovies() {
                   }`}
                 >
                   {year}
+                </button>
                 </button>
               ))}
             </div>
@@ -143,5 +163,8 @@ export default function Aftermovies() {
 
       </div>
     </section>
+      </div>
+      </section>
+    </AnimatedDiv>
   );
 }

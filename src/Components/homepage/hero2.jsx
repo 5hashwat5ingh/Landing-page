@@ -1,4 +1,5 @@
-import React from "react";
+import { CalendarDays, MapPin } from "lucide-react";
+import Abhyudaya from "../../assets/Logo-images/Abhyudaya-combined.png";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -70,6 +71,9 @@ export default function Hero2Section() {
         viewport={{ once: true, margin: "-100px" }}
         className="relative z-10 w-full max-w-6xl mx-auto flex flex-col items-center justify-center text-center px-4 sm:px-6 flex-grow"
       >
+        {/* Background glows from incoming branch */}
+        <div className="pointer-events-none absolute -left-16 -top-16 h-56 w-56 rounded-full bg-amber-300/20 blur-3xl" />
+        <div className="pointer-events-none absolute -right-20 bottom-10 h-64 w-64 rounded-full bg-fuchsia-400/20 blur-3xl" />
         
         {/* Main Titles */}
         <div className="mb-6 sm:mb-8 mt-2 sm:mt-4 flex flex-col items-center">
@@ -86,7 +90,7 @@ export default function Hero2Section() {
         </div>
 
         {/* Text Description Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full text-left mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full text-left mb-8 block max-w-5xl mx-auto">
           
           {/* Card 1 */}
           <div className="bg-black/60 backdrop-blur-md border border-white/10 p-5 sm:p-6 rounded-[1.5rem] shadow-2xl hover:bg-black/70 transition-all duration-300 hover:-translate-y-1 group">
@@ -131,14 +135,22 @@ export default function Hero2Section() {
         <div className="relative z-10 w-full px-2 flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 mt-auto">
           
           <div className="flex items-center gap-3 px-4 py-3 bg-black/60 backdrop-blur-lg border border-white/10 rounded-xl shadow-[0_0_20px_rgba(0,0,0,0.5)] min-w-[220px]">
+             <div className="p-1.5 bg-white/5 rounded pl-2">
+                 <CalendarDays className="h-4 w-4 text-amber-100" />
+             </div>
+             <div className="text-left">
+               <p className="text-[9px] sm:text-[10px] text-gray-400 uppercase tracking-widest font-semibold mb-0">Dates</p>
+               <p className="text-sm font-medium text-white tracking-wide">4 Apr - 6 Apr, 2025</p>
+             </div>
+          </div>
+
+          <div className="flex items-center gap-3 px-4 py-3 bg-black/60 backdrop-blur-lg border border-white/10 rounded-xl shadow-[0_0_20px_rgba(0,0,0,0.5)] min-w-[220px]">
             <div className="p-1.5 bg-white/5 rounded pl-2">
-              <svg className="w-5 h-5 text-yellow-200/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
+              <MapPin className="h-4 w-4 text-amber-100" />
             </div>
             <div className="text-left">
-              <p className="text-[9px] sm:text-[10px] text-gray-400 uppercase tracking-widest font-semibold mb-0">Dates</p>
-              <p className="text-sm font-medium text-white tracking-wide">4 Apr - 6 Apr, 2025</p>
+              <p className="text-[9px] sm:text-[10px] text-gray-400 uppercase tracking-widest font-semibold mb-0">Venue</p>
+              <p className="text-sm font-medium text-white tracking-wide">MMMUT, Gorakhpur</p>
             </div>
           </div>
 
@@ -153,10 +165,7 @@ export default function Hero2Section() {
 
           <div className="flex items-center gap-3 px-4 py-3 bg-black/60 backdrop-blur-lg border border-white/10 rounded-xl shadow-[0_0_20px_rgba(0,0,0,0.5)] min-w-[220px]">
             <div className="p-1.5 bg-white/5 rounded pl-2">
-              <svg className="w-5 h-5 text-yellow-200/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>
+              <MapPin className="h-4 w-4 text-amber-100" />
             </div>
             <div className="text-left">
               <p className="text-[9px] sm:text-[10px] text-gray-400 uppercase tracking-widest font-semibold mb-0">Venue</p>
