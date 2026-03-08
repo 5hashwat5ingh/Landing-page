@@ -78,8 +78,8 @@ export default function Hero2Section() {
             alt="Abhyudaya logo"
             className="w-full max-w-[280px] sm:max-w-[400px] mb-4 sm:mb-6 drop-shadow-[0_0_30px_rgba(255,255,255,0.4)]"
           />
-          <div className="inline-block px-5 sm:px-8 py-2 sm:py-3 bg-black/30 backdrop-blur-md border border-white/10 rounded-full shadow-2xl">
-            <h2 className="text-lg sm:text-2xl md:text-3xl text-white font-cinzel text-shadow-magic tracking-widest uppercase">
+          <div className="inline-block px-5 sm:px-8 py-2 sm:py-3 bg-white/80 backdrop-blur-md border border-white/40 rounded-full shadow-[0_0_30px_rgba(255,255,255,0.3)]">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl text-black font-enchanted tracking-widest drop-shadow-sm">
               An Enchanted Escapade
             </h2>
           </div>
@@ -109,7 +109,7 @@ export default function Hero2Section() {
               </svg>
             </div>
             <p className="text-sm sm:text-[15px] font-light text-gray-200 leading-relaxed">
-              Abhyudaya, <span className="font-cinzel text-[#d8b4e2] tracking-wider font-semibold">AN ENCHANTED ESCAPADE</span> is a kaleidoscopic fusion of tradition and innovation, where ancient rhythms and contemporary beats come alive.
+              Abhyudaya, <span className="font-enchanted font-bold text-black bg-white/80 px-2 py-0.5 rounded-sm mx-1 tracking-widest drop-shadow-sm shadow-[0_0_10px_rgba(255,255,255,0.5)]">AN ENCHANTED ESCAPADE</span> is a kaleidoscopic fusion of tradition and innovation, where ancient rhythms and contemporary beats come alive.
             </p>
           </div>
 

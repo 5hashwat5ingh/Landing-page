@@ -40,7 +40,7 @@ const FlipCard = () => {
         viewport={{ once: true }}
         className="mx-auto max-w-3xl text-center"
       >
-        <h2 className="mb-2 bg-linear-to-r from-purple-300 to-pink-300 bg-clip-text font-karantina text-4xl font-bold tracking-[4px] text-transparent drop-shadow-md sm:text-5xl md:text-6xl uppercase">
+        <h2 className="mb-2 bg-linear-to-r from-purple-300 to-pink-300 bg-clip-text font-cinzel text-3xl font-bold tracking-widest text-transparent drop-shadow-md sm:text-4xl md:text-5xl uppercase">
           MERCHANDISE
         </h2>
         <p className="mt-2 text-sm text-slate-300 font-semibold uppercase tracking-widest drop-shadow-md">

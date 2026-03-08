@@ -57,7 +57,7 @@ export default function Aftermovies() {
               Abhyudaya is the annual Art, Cultural & Literary fest of MMMUT, Gorakhpur. A vibrant confluence of creativity and passion where art breathes, culture thrives, and literature resonates.
             </p>
             <p className="text-gray-300 text-sm sm:text-base leading-relaxed font-light">
-              This year's theme: <span className="text-[#e8b5d6] font-semibold tracking-wider font-cinzel drop-shadow-[0_0_10px_rgba(232,181,214,0.5)]">AN ENCHANTED ESCAPADE</span> — a kaleidoscopic fusion of tradition and innovation.
+              This year's theme: <span className="font-enchanted font-bold text-black bg-white/80 px-2 py-0.5 rounded-sm mx-1 tracking-widest drop-shadow-sm shadow-[0_0_10px_rgba(255,255,255,0.5)]">AN ENCHANTED ESCAPADE</span> — a kaleidoscopic fusion of tradition and innovation.
             </p>
           </div>
         </motion.div>

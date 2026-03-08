@@ -60,7 +60,7 @@ export default function ArtistGallery() {
         viewport={{ once: true }}
         className="flex flex-col items-center mb-6 px-4 sm:px-6 md:px-12 lg:px-16 text-center"
       >
-        <h1 className="bg-linear-to-r from-purple-300 to-pink-300 bg-clip-text text-center font-karantina text-4xl font-bold tracking-[4px] text-transparent drop-shadow-md sm:text-5xl md:text-6xl uppercase">
+        <h1 className="bg-linear-to-r from-purple-300 to-pink-300 bg-clip-text text-center font-cinzel text-3xl font-bold tracking-widest text-transparent drop-shadow-md sm:text-4xl md:text-5xl uppercase">
           PREVIOUS ARTISTS
         </h1>
         <p className="mt-2 text-white/70 text-sm sm:text-base font-mooli tracking-wide max-w-xl mx-auto">
