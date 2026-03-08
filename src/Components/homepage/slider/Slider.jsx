@@ -64,45 +64,56 @@ export default function ArtistGallery() {
           PREVIOUS ARTISTS
         </h1>
         <p className="mt-2 text-white/70 text-sm sm:text-base font-mooli tracking-wide max-w-xl mx-auto">
-          Swipe to explore the roster of brilliant artists who have graced our stage.
+          Explore the roster of brilliant artists who have graced our stage.
         </p>
       </motion.div>
 
-      {/* Horizontal Scroll Container */}
-      <motion.div 
-        ref={containerRef}
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 0.3 }}
-        viewport={{ once: true }}
-        className="w-full overflow-x-auto pb-8 pt-2 px-6 sm:px-12 md:px-16 snap-x snap-mandatory flex gap-4 sm:gap-6 hide-scrollbar relative z-10" 
-        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-      >
-        {artistsData.map((artist, i) => (
-          <motion.div 
-            key={`${artist.name}-${i}`}
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: i * 0.1 }}
-            viewport={{ once: true, margin: "-50px" }}
-          >
-            <EditorialArtistCard 
-              artistName={artist.name}
-              trackName="Featured Artist"
-              bio="Experience the magic of past performances that brought the festival to life."
-              imageUrl={artist.link}
-              tags={['Live Performance']}
-            />
-          </motion.div>
-        ))}
-        {/* Spacer for the end of the scroll */}
-        <div className="flex-none w-4 sm:w-12"></div>
-      </motion.div>
+      {/* Infinite Horizontal Marquee */}
+      <div className="relative w-full overflow-hidden py-4 z-10">
+        {/* Left/Right fading edges for a smooth transition effect */}
+        <div className="absolute top-0 left-0 w-8 sm:w-24 h-full bg-linear-to-r from-black via-black/80 to-transparent z-20 pointer-events-none"></div>
+        <div className="absolute top-0 right-0 w-8 sm:w-24 h-full bg-linear-to-l from-black via-black/80 to-transparent z-20 pointer-events-none"></div>
 
-      {/* CSS to hide scrollbar */}
+        <motion.div 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="flex w-max animate-[marquee_40s_linear_infinite] hover:[animation-play-state:paused]"
+        >
+          {/* First Set */}
+          <div className="flex gap-4 sm:gap-6 px-2 sm:px-3">
+            {artistsData.map((artist, i) => (
+              <EditorialArtistCard 
+                key={`set1-${i}`}
+                artistName={artist.name}
+                trackName="Featured Artist"
+                bio="Experience the magic of past performances that brought the festival to life."
+                imageUrl={artist.link}
+                tags={['Live Performance']}
+              />
+            ))}
+          </div>
+          {/* Second Set */}
+          <div className="flex gap-4 sm:gap-6 px-2 sm:px-3">
+            {artistsData.map((artist, i) => (
+              <EditorialArtistCard 
+                key={`set2-${i}`}
+                artistName={artist.name}
+                trackName="Featured Artist"
+                bio="Experience the magic of past performances that brought the festival to life."
+                imageUrl={artist.link}
+                tags={['Live Performance']}
+              />
+            ))}
+          </div>
+        </motion.div>
+      </div>
+
       <style dangerouslySetInnerHTML={{__html: `
-        .hide-scrollbar::-webkit-scrollbar {
-          display: none;
+        @keyframes marquee {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
         }
       `}} />
     </div>
