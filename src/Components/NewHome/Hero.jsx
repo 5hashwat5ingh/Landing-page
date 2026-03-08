@@ -398,12 +398,12 @@ export function Hero() {
               <h1 className="text-5xl md:text-6xl font-karantina text-white tracking-[3px] pt-8 text-center drop-shadow-[0_4px_20px_rgba(252,155,155,1)]">
                 
               </h1>
-              <Slider />
+              <Aftermovies />
             </div>
           </section>
 
           <section className="scene scene-4 min-h-screen flex items-center justify-center bg-[#030919] relative m-5">
-            <div className="z-10"><Aftermovies /></div>
+            <div className="z-10"><Slider /></div>
           </section>
 
           
@@ -451,9 +451,8 @@ export function Hero() {
           <section className="scene scene-3 absolute inset-0 opacity-0">
             <canvas ref={canvasRefs.gatetoforest} />
             
-            <div className="absolute inset-0 flex items-center justify-center ">
-							<Slider
-							/>
+            <div className="scene-content absolute inset-0 flex items-center justify-center ">
+							<Aftermovies />
 						</div>
           </section>
 
@@ -463,7 +462,7 @@ export function Hero() {
               alt="Light Wizard"
               className="w-full h-full object-cover"
             /><div className="scene-content absolute inset-0 flex items-center justify-center">
-							<Aftermovies />
+							<Slider />
 						</div>
           </section>
           <section className="scene scene-5 absolute inset-0 opacity-0">

@@ -45,7 +45,7 @@ export default function Hero2Section() {
           Step into a vibrant celebration where India's timeless heritage meets modern style.
           <br />
           <br />
-          Abhyudaya, <span className="font-semibold text-purple-300">AN ENIGMATIC ENSEMBLE</span> is a kaleidoscopic fusion of tradition and
+          Abhyudaya, <span className="font-enchanted text-2xl tracking-[2px] text-purple-300 drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]">An ENCHANTED ESCAPADE</span> is a kaleidoscopic fusion of tradition and
           innovation, where ancient rhythms, contemporary beats, and vibrant colors come alive.
           <br />
           <br />

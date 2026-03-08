@@ -47,7 +47,7 @@ const ArtistGallery = () => {
         className="flex flex-col items-center mb-10"
       >
         <h2 className="bg-linear-to-r from-purple-300 to-pink-300 bg-clip-text text-center font-karantina text-4xl font-bold tracking-[4px] text-transparent drop-shadow-md sm:text-5xl md:text-6xl uppercase">
-          FEATURED ARTISTS
+          PREVIOUS ARTISTS
         </h2>
       </motion.div>
 
