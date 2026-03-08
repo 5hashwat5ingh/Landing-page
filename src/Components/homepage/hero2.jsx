@@ -3,7 +3,6 @@ import Abhyudaya from "../../assets/Logo-images/Abhyudaya-combined.png";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import Abhyudaya from "../../assets/Logo-images/Abhyudaya-combined.png";
 
 const Fireflies = () => {
   return (
@@ -162,16 +161,6 @@ export default function Hero2Section() {
               Register Now
             </Link>
           )}
-
-          <div className="flex items-center gap-3 px-4 py-3 bg-black/60 backdrop-blur-lg border border-white/10 rounded-xl shadow-[0_0_20px_rgba(0,0,0,0.5)] min-w-[220px]">
-            <div className="p-1.5 bg-white/5 rounded pl-2">
-              <MapPin className="h-4 w-4 text-amber-100" />
-            </div>
-            <div className="text-left">
-              <p className="text-[9px] sm:text-[10px] text-gray-400 uppercase tracking-widest font-semibold mb-0">Venue</p>
-              <p className="text-sm font-medium text-white tracking-wide">MMMUT, Gorakhpur</p>
-            </div>
-          </div>
 
         </div>
 

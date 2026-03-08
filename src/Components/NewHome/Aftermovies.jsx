@@ -121,7 +121,6 @@ export default function Aftermovies() {
                 >
                   {year}
                 </button>
-                </button>
               ))}
             </div>
           </div>
@@ -163,8 +162,6 @@ export default function Aftermovies() {
 
       </div>
     </section>
-      </div>
-      </section>
     </AnimatedDiv>
   );
 }
