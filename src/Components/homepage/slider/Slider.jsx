@@ -37,7 +37,7 @@ const ArtistGallery = () => {
   };
 
   return (
-    <div className="relative mx-auto w-full max-w-screen-2xl px-4 sm:px-6">
+    <div className="relative mx-auto w-[80%] max-w-screen-2xl px-4 sm:px-6">
       <div className="pointer-events-none absolute -left-10 top-0 h-40 w-40 rounded-full  blur-3xl" />
       <div className="pointer-events-none absolute -right-8 bottom-4 h-44 w-44 rounded-full bg-fuchsia-400/20 blur-3xl" />
       <div className="pointer-events-none absolute inset-0 bg-linear-to-br from-amber-200/10 via-transparent to-sky-200/10" />

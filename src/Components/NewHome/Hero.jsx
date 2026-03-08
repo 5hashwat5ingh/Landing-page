@@ -422,7 +422,7 @@ export function Hero() {
   return (
     <div className="bg-black text-white antialiased text-center">
       <div ref={wrapperRef} className="relative">
-        {/*<AntLogo />*/}
+        
         <div
           ref={mainRef}
           className={`h-screen w-screen fixed top-0 left-0 ${
