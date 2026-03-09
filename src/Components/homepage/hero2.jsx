@@ -35,7 +35,7 @@ export default function Hero2Section() {
   const user = useSelector((state) => state.user);
 
   return (
-    <section className="scene-content relative w-full h-[100dvh] flex flex-col items-center justify-center font-sans text-white py-6 sm:py-10 select-none">
+    <section className="scene-content relative w-full min-h-[100dvh] pb-16 pt-8 flex flex-col items-center justify-center font-sans text-white select-none overflow-hidden">
       
       <style>
         {`

@@ -11,16 +11,16 @@ const IndexHome = () => {
 
   return (
     <div
-      className="flex flex-col select-none overflow-x-hidden gap-30 items-center bg-black text-white"
+      className="flex flex-col select-none overflow-x-hidden items-center bg-black text-white"
     >
-      <HeroSection />
-      <SponsorSlider /> {/* Move the new component */}
-      <Hero2Section /> 
-      <CountDown />
+      <section className="relative w-full overflow-hidden"><HeroSection /></section>
+      <section className="relative w-full overflow-hidden py-12"><SponsorSlider /></section> {/* Move the new component */}
+      <section className="relative w-full overflow-hidden py-12"><Hero2Section /></section> 
+      <section className="relative w-full overflow-hidden py-12"><CountDown /></section>
       {/* <ArtistSlider/> */}
-      <Stats/>
-      <ArtistSlider id="artists"/>
-      <Merchandise/>
+      <section className="relative w-full overflow-hidden py-12"><Stats/></section>
+      <section className="relative w-full overflow-hidden py-12"><ArtistSlider id="artists"/></section>
+      <section className="relative w-full overflow-hidden py-12"><Merchandise/></section>
     </div>
   );
 };

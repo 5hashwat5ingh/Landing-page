@@ -199,7 +199,7 @@ const FlipCard = () => {
           </motion.div>
 
           {/* Merch Cards Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 w-full max-w-5xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-8 lg:gap-12 w-full max-w-5xl mb-8">
             <MerchCard 
               {...merchData.black} 
               isSelected={selectedItem === 'black'}

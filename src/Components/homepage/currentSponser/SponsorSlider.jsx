@@ -9,8 +9,8 @@ import "swiper/css/autoplay";
 
 const SponsorSlider = () => {
   return (
-    <div className="relative w-full max-w-none mx-auto px-6 py-12 bg-gradient-to-b from-gray-900 to-black">
- <h2 className="text-center text-5xl font-extrabold mb-8 bg-gradient-to-r from-purple-500 via-fuchsia-600 to-indigo-800 bg-clip-text text-transparent font-[Montserrat] tracking-wide">
+    <div className="relative w-full max-w-none mx-auto px-4 sm:px-6 py-12 bg-gradient-to-b from-gray-900 to-black overflow-hidden">
+ <h2 className="text-center text-3xl sm:text-4xl md:text-5xl font-extrabold mb-8 bg-gradient-to-r from-purple-500 via-fuchsia-600 to-indigo-800 bg-clip-text text-transparent font-[Montserrat] tracking-wide">
   Our Sponsors
 </h2>
 

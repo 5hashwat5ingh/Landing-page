@@ -62,7 +62,7 @@ export default function Aftermovies() {
           >
             
             {/* Decorative watermark text */}
-            <div className="absolute -bottom-10 -right-10 text-[8rem] font-cinzel font-black text-white/5 tracking-tighter pointer-events-none transform -rotate-6 group-hover:scale-105 transition-transform duration-1000">
+            <div className="absolute -bottom-10 -right-10 text-[5rem] sm:text-[6rem] md:text-[8rem] font-cinzel font-black text-white/5 tracking-tighter pointer-events-none transform -rotate-6 group-hover:scale-105 transition-transform duration-1000">
               FEST
             </div>
 
